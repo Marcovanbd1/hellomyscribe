@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About | MyScribe</title>
+<meta name="description" content="MyScribe started on the Isle of Portland in Dorset. Built in a neighbourhood, for neighbours.">
+<meta property="og:title" content="About | MyScribe">
+<meta property="og:description" content="MyScribe started on the Isle of Portland in Dorset. Built in a neighbourhood, for neighbours.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0B6E69">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap">
+<a class="logo" href="/">MyScribe</a>
+<nav class="nav" aria-label="Main">
+<a href="/how-it-works">How it works</a>
+<a href="/organisations">For organisations</a>
+<a href="/about" aria-current="page">About</a>
+<a class="btn btn-primary" href="/#waitlist">Join the waitlist</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<div class="wrap page-intro split">
+<div>
+<h1 class="h1">Built in a neighbourhood, for neighbours.</h1>
+<p class="soft" style="font-size:20px;margin-bottom:16px">MyScribe started on the Isle of Portland in Dorset, in conversations with patients in libraries, cafés and pubs. People knew good help existed. They just couldn't hold on to what they'd been told.</p>
+<p class="soft" style="font-size:20px">So we built something for the moment it matters most: the conversation itself.</p>
+</div>
+<div class="founder side">
+<img class="founder-photo" src="/mark-winterburn.jpg" alt="Mark Winterburn" width="120" height="120">
+<h2>Mark Winterburn</h2>
+<p class="soft" style="margin-bottom:16px">Founder and Applied Philosopher</p>
+<p class="soft" style="font-size:17px">Mark is an applied philosopher working in NHS primary care in Dorset. He listens to what patients actually need, then builds it. Before the NHS, he spent over twenty years in television broadcast, as a Playout Director with the BBC, Channel 4, and all the live sport channels.</p>
+</div>
+</div>
+
+<section class="section section-tint" id="contact">
+<div class="wrap split">
+<div>
+<h2 class="h2" style="margin-bottom:16px">Get in touch</h2>
+<p class="soft" style="margin-bottom:8px">Patients, clinicians, commissioners, partners and investors.</p>
+<p><a href="mailto:hello@markwinterburn.uk">hello@markwinterburn.uk</a></p>
+</div>
+<form class="form" name="contact" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="contact">
+<p class="hidden"><label>Leave this empty <input name="bot-field"></label></p>
+<div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+<div class="field"><label for="cemail">Email</label><input id="cemail" name="email" type="email" autocomplete="email" required></div>
+<div class="field"><label for="who">I'm getting in touch as</label>
+<select id="who" name="who">
+<option>A patient or carer</option>
+<option>A clinician or practice</option>
+<option>A commissioner or ICB</option>
+<option>A partner or investor</option>
+</select></div>
+<div class="field"><label for="msg">Message</label><textarea id="msg" name="message" rows="5" required></textarea></div>
+<div><button class="btn btn-primary" type="submit">Send message</button></div>
+</form>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<p class="footer-tag">For every conversation that matters.</p>
+<div class="footer-links">
+<span>MyScribe is made by Opsimath Ltd, registered in England and Wales, company number 17461745</span>
+<a href="mailto:hello@markwinterburn.uk">hello@markwinterburn.uk</a>
+<a href="/privacy">Privacy</a>
+</div>
+</div>
+</footer>
+<script src="/site.js" defer></script>
+</body>
+</html>
