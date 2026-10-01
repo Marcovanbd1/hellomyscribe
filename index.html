@@ -1,0 +1,360 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MyScribe | Preview</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Source+Sans+3:wght@400;600&display=swap">
+<style>:root{
+  --ink:#16202A; --ink-soft:#3A4651; --muted:#55616B;
+  --accent:#0B6E69; --accent-dark:#08524E;
+  --mist:#F2F5F4; --line:#D5DCDA; --white:#FFFFFF;
+  --display:'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  --body:'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.55}
+img{max-width:100%;height:auto}
+a{color:var(--ink)}
+a:hover{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);letter-spacing:-0.02em;margin:0}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:12px 16px;z-index:10}
+.skip:focus{left:16px;top:16px;color:#fff}
+
+/* Header */
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px 24px;flex-wrap:wrap;padding-top:28px;padding-bottom:28px}
+.logo{font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:-0.02em;text-decoration:none;color:var(--ink)}
+.nav{display:flex;gap:12px 28px;align-items:center;flex-wrap:wrap;font-size:17px}
+.nav a{text-decoration:none}
+.nav a[aria-current="page"]{text-decoration:underline;text-underline-offset:6px;font-weight:600}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;border-radius:999px;font-weight:600;font-family:var(--body);font-size:17px;text-decoration:none;border:2px solid transparent;cursor:pointer;line-height:1.2}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark);color:#fff}
+.btn-outline{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.nav .btn{min-height:44px;padding:10px 20px}
+
+/* Type helpers */
+.eyebrow{font-weight:600;color:var(--accent);font-size:17px;margin-bottom:20px}
+.h1{font-weight:800;font-size:clamp(38px,5.5vw,56px);line-height:1.08;letter-spacing:-0.03em;margin-bottom:24px}
+.h2{font-weight:800;font-size:clamp(30px,4vw,40px);margin-bottom:32px}
+.lead{font-size:21px;color:var(--ink-soft);max-width:46ch}
+.soft{color:var(--ink-soft)}
+
+/* Sections */
+.section{padding:96px 0}
+.section-tint{background:var(--mist)}
+.section-dark{background:var(--ink);color:#fff}
+.page-intro{padding:72px 0 64px}
+
+/* Hero */
+.hero{display:flex;gap:64px;align-items:center;flex-wrap:wrap;padding:72px 0 96px}
+.hero-text{flex:1 1 520px}
+.hero .lead{max-width:34ch;margin-bottom:36px}
+.actions{display:flex;gap:16px;flex-wrap:wrap}
+.hero-phone{flex:0 1 320px;display:flex;justify-content:center;margin:0 auto}
+.phone{width:300px;height:600px;border:10px solid var(--ink);border-radius:44px;padding:48px 28px 36px;display:flex;flex-direction:column;justify-content:space-between;background:#F4F7F6}
+.phone small{display:block;font-size:14px;color:var(--muted);margin-bottom:8px}
+.phone-q{font-family:var(--display);font-weight:700;font-size:26px;line-height:1.2}
+.phone-record{height:72px;border-radius:999px;background:var(--accent);color:#fff;font-family:var(--display);font-weight:700;font-size:20px;display:flex;align-items:center;justify-content:center}
+.phone-link{text-align:center;text-decoration:underline;font-size:16px;margin-top:16px}
+
+/* Grids */
+.grid{display:grid;gap:40px 48px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.stat-num{font-family:var(--display);font-weight:800;font-size:52px;letter-spacing:-0.03em;color:var(--accent);line-height:1.1;margin-bottom:8px}
+.cite{color:var(--muted)}
+.step{border-top:2px solid var(--ink);padding-top:20px}
+.step h3{font-weight:700;font-size:24px;margin-bottom:8px}
+.feature h3{font-weight:700;font-size:20px;margin-bottom:8px;font-family:var(--body);letter-spacing:0}
+.feature-lg h2{font-weight:700;font-size:26px;margin-bottom:12px}
+
+/* Rows (how it works) */
+.rows{border-bottom:2px solid var(--ink)}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px 32px;border-top:2px solid var(--ink);padding:36px 0}
+.row h2{font-weight:700;font-size:28px}
+
+/* Statement */
+.statement{font-family:var(--display);font-weight:700;font-size:clamp(30px,4.2vw,44px);line-height:1.2;letter-spacing:-0.02em;max-width:22ch}
+
+/* Panels */
+.doors{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.panel{border-radius:20px;padding:40px}
+.panel-tint{background:var(--mist)}
+.panel-line{border:2px solid var(--ink)}
+.panel h2{font-weight:800;font-size:30px;margin-bottom:12px}
+.panel p{margin-bottom:24px}
+
+/* Split */
+.split{display:flex;gap:48px 64px;flex-wrap:wrap;align-items:flex-start}
+.split > *{flex:1 1 400px}
+.split .side{flex:0 1 360px}
+
+/* Forms */
+.form{display:flex;flex-direction:column;gap:18px}
+.field{display:flex;flex-direction:column;gap:6px}
+label{font-weight:600;font-size:16px}
+input,select,textarea{font:inherit;font-size:17px;color:var(--ink);background:#fff;border:2px solid var(--ink);border-radius:12px;padding:12px 16px;min-height:52px;width:100%}
+textarea{min-height:140px;resize:vertical}
+.inline-field{display:flex;gap:12px;flex-wrap:wrap}
+.inline-field input{flex:1 1 220px;width:auto}
+.inline-field .btn{border-radius:12px;min-height:52px}
+.hidden{position:absolute;left:-9999px}
+.form-note{font-size:15px;color:var(--muted)}
+
+/* Faq */
+.faq{display:flex;flex-direction:column;gap:28px;max-width:760px}
+.faq h3{font-family:var(--body);letter-spacing:0;font-weight:600;font-size:20px;margin-bottom:6px}
+
+/* Founder card */
+.founder{background:var(--mist);border-radius:20px;padding:36px}
+.founder h2{font-weight:700;font-size:22px;margin-bottom:4px}
+.founder-photo{width:96px;height:96px;border-radius:999px;background:var(--line);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--ink-soft);margin-bottom:20px;object-fit:cover}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--line)}
+.site-footer .wrap{display:flex;justify-content:space-between;gap:16px 24px;flex-wrap:wrap;padding-top:40px;padding-bottom:40px;font-size:15px;color:var(--ink-soft)}
+.footer-tag{font-family:var(--display);font-weight:700;color:var(--ink);font-size:18px}
+.footer-links{display:flex;gap:8px 20px;flex-wrap:wrap}
+
+/* Simple pages */
+.prose{max-width:720px}
+.prose h2{font-size:26px;margin:40px 0 12px}
+.prose p{margin-bottom:16px;color:var(--ink-soft)}
+
+@media (max-width:640px){
+  .wrap{padding:0 20px}
+  .section{padding:64px 0}
+  .hero{padding:40px 0 64px;gap:48px}
+  .panel{padding:28px}
+  .phone{width:260px;height:520px;padding:40px 22px 28px}
+  .phone-q{font-size:22px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style></head><body><header class="site-header">
+<div class="wrap">
+<a class="logo" href="#home">MyScribe</a>
+<nav class="nav" aria-label="Main">
+<a href="#how-it-works">How it works</a>
+<a href="#organisations">For organisations</a>
+<a href="#about">About</a>
+<a class="btn btn-primary" href="#home">Join the waitlist</a>
+</nav>
+</div>
+</header><main id="main"><div class="pg" data-page="home" hidden>
+<div class="wrap">
+<section class="hero">
+<div class="hero-text">
+<p class="eyebrow">A memory aid for your appointments</p>
+<h1 class="h1">“Do you mind if I record this? Just to help me remember.”</h1>
+<p class="lead">MyScribe records your conversation on your phone, with permission, and gives you a faithful summary to look back on and share with the people you choose.</p>
+<div class="actions">
+<a class="btn btn-primary" href="#home">Join the waitlist</a>
+<a class="btn btn-outline" href="#how-it-works">See how it works</a>
+</div>
+</div>
+<div class="hero-phone" aria-hidden="true">
+<div class="phone">
+<div>
+<small>Before you start</small>
+<p class="phone-q">Do you mind if I record this? Just to help me remember.</p>
+</div>
+<div>
+<div class="phone-record">They said yes. Record</div>
+<p class="phone-link">My conversations</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<section class="section section-tint" aria-label="Why it matters">
+<div class="wrap grid">
+<div><p class="stat-num">40-80%</p><p>of what is said in a medical appointment is forgotten almost straight away. <span class="cite">(Kessels, 2003)</span></p></div>
+<div><p class="stat-num">1 in 5</p><p>GP appointments are for needs that are not medical.</p></div>
+<div><p class="stat-num">15 million</p><p>GP appointments are missed in England every year, costing the NHS over £216 million.</p></div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<h2 class="h2">Three steps. Nothing to learn.</h2>
+<ol class="grid" style="list-style:none;margin:0;padding:0">
+<li class="step"><h3>1. Ask</h3><p class="soft">MyScribe opens on the question. Ask it out loud, so everyone in the room knows.</p></li>
+<li class="step"><h3>2. Record</h3><p class="soft">One button. Put your phone down and listen to the person in front of you.</p></li>
+<li class="step"><h3>3. Remember</h3><p class="soft">Get a faithful summary in plain words. Look back on it later, or share it with family.</p></li>
+</ol>
+</div>
+</section>
+
+<section class="section section-dark">
+<div class="wrap"><p class="statement">Your appointment. Your record. On your phone. To share with who you choose.</p></div>
+</section>
+
+<section class="section" id="waitlist">
+<div class="wrap doors">
+<div class="panel panel-tint">
+<h2>For you</h2>
+<p class="soft">MyScribe launches soon. Leave your email and we'll tell you when it's ready.</p>
+<form class="form" name="waitlist" method="POST" onsubmit="location.hash='thank-you';return false" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="waitlist">
+<p class="hidden"><label>Leave this empty <input name="bot-field"></label></p>
+<label for="email">Email address</label>
+<div class="inline-field">
+<input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+<button class="btn btn-primary" type="submit">Join the waitlist</button>
+</div>
+<p class="form-note">We'll only use your email to tell you about MyScribe. <a href="#privacy">Privacy</a></p>
+</form>
+</div>
+<div class="panel panel-line">
+<h2>For organisations</h2>
+<p class="soft">GP practices, PCNs, ICBs and partners. Find out how MyScribe helps patients remember, and cuts repeat contact.</p>
+<a class="btn btn-outline" href="#organisations">Talk to us</a>
+</div>
+</div>
+</section>
+</div>
+<div class="pg" data-page="how-it-works" hidden>
+<div class="wrap page-intro">
+<h1 class="h1" style="max-width:18ch">Record. Summarise faithfully. Remember.</h1>
+<p class="lead">That's all MyScribe does. It doesn't interpret what was said, and it doesn't give advice. It keeps the words, so you don't have to.</p>
+</div>
+
+<div class="wrap" style="padding-bottom:96px">
+<div class="rows">
+<div class="row"><h2>1. Ask</h2><p class="soft">Open the app and it asks the question for you: “Do you mind if I record this? Just to help me remember.” Recording is open and agreed, never secret.</p></div>
+<div class="row"><h2>2. Record</h2><p class="soft">Tap once. MyScribe listens while you listen. No forms, no settings, no training needed.</p></div>
+<div class="row"><h2>3. Remember</h2><p class="soft">You get a clear summary in plain words, saved in My Conversations. Read it again later, or share it with a partner, a carer or family.</p></div>
+</div>
+</div>
+
+<section class="section section-tint">
+<div class="wrap">
+<h2 class="h2">Your privacy, in plain words</h2>
+<div class="grid">
+<div class="feature"><h3>It's yours</h3><p class="soft">It was your conversation. The recording and summary belong to you.</p></div>
+<div class="feature"><h3>You choose who sees it</h3><p class="soft">Nothing is shared unless you share it.</p></div>
+<div class="feature"><h3>Kept in the UK or EU</h3><p class="soft">If anything leaves your phone, it's processed on UK or EU servers only.</p></div>
+<div class="feature"><h3>Never sold, never used for training</h3><p class="soft">Your data is not sold, and it's not used to train AI models.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<h2 class="h2">Questions</h2>
+<div class="faq">
+<div><h3>Do I need to ask before recording?</h3><p class="soft">Yes. That's why MyScribe opens on the question. Asking openly keeps trust in the room.</p></div>
+<div><h3>Is it only for GP appointments?</h3><p class="soft">We're starting in health, because it's where remembering matters most. It works for any conversation that matters.</p></div>
+<div><h3>How much will it cost?</h3><p class="soft">Free to download, then you only pay for what you use. We'll share pricing at launch.</p></div>
+</div>
+<div class="actions" style="margin-top:48px"><a class="btn btn-primary" href="#home">Join the waitlist</a></div>
+</div>
+</section>
+</div>
+<div class="pg" data-page="organisations" hidden>
+<div class="wrap page-intro">
+<p class="eyebrow">For practices, PCNs, ICBs and partners</p>
+<h1 class="h1" style="max-width:20ch">Patients who remember need to call back less.</h1>
+<p class="lead" style="max-width:48ch">Patients already record appointments, often covertly. MyScribe makes it open, agreed and useful, with a faithful record the patient owns.</p>
+</div>
+
+<section class="section section-tint">
+<div class="wrap grid">
+<div class="feature-lg"><h2>Less recontact</h2><p class="soft">Fewer “what did the doctor say?” calls to reception, because the answer is on the patient's phone.</p></div>
+<div class="feature-lg"><h2>Better-informed patients</h2><p class="soft">Plans, next steps and referrals in plain words, shared with the carers and family who help make them happen.</p></div>
+<div class="feature-lg"><h2>Aligned with the 10 Year Health Plan</h2><p class="soft">Patient power, neighbourhood health and care closer to home, in a tool people carry with them.</p></div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap split">
+<div>
+<h2 class="h2" style="margin-bottom:20px">Working together</h2>
+<p class="soft" style="margin-bottom:16px">MyScribe is launching soon. If you'd like to understand how it could support your patients and your teams, we'd like to hear from you.</p>
+<p class="soft">Practices, PCNs, ICBs, partners and investors all welcome.</p>
+</div>
+<div class="panel panel-line side">
+<h2 style="font-size:26px;font-weight:700">Talk to us</h2>
+<p class="soft">Drop us a line and we'll get back to you.</p>
+<a class="btn btn-primary" href="mailto:hello@hellomyscribe.com">hello@hellomyscribe.com</a>
+</div>
+</div>
+</section>
+</div>
+<div class="pg" data-page="about" hidden>
+<div class="wrap page-intro split">
+<div>
+<h1 class="h1">Built in a neighbourhood, for neighbours.</h1>
+<p class="soft" style="font-size:20px;margin-bottom:16px">MyScribe started on the Isle of Portland in Dorset, in conversations with patients in libraries, cafés and pubs. People knew good help existed. They just couldn't hold on to what they'd been told.</p>
+<p class="soft" style="font-size:20px">So we built something for the moment it matters most: the conversation itself.</p>
+</div>
+<div class="founder side">
+<div class="founder-photo">[PHOTO]</div>
+<h2>Mark Winterburn</h2>
+<p class="soft" style="margin-bottom:16px">Founder</p>
+<p class="soft" style="font-size:17px">[ONE OR TWO LINES ON MARK]</p>
+</div>
+</div>
+
+<section class="section section-tint" id="contact">
+<div class="wrap split">
+<div>
+<h2 class="h2" style="margin-bottom:16px">Get in touch</h2>
+<p class="soft" style="margin-bottom:8px">Patients, clinicians, commissioners, partners and investors.</p>
+<p><a href="mailto:hello@hellomyscribe.com">hello@hellomyscribe.com</a></p>
+</div>
+<form class="form" name="contact" method="POST" onsubmit="location.hash='thank-you';return false" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="contact">
+<p class="hidden"><label>Leave this empty <input name="bot-field"></label></p>
+<div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+<div class="field"><label for="cemail">Email</label><input id="cemail" name="email" type="email" autocomplete="email" required></div>
+<div class="field"><label for="who">I'm getting in touch as</label>
+<select id="who" name="who">
+<option>A patient or carer</option>
+<option>A clinician or practice</option>
+<option>A commissioner or ICB</option>
+<option>A partner or investor</option>
+</select></div>
+<div class="field"><label for="msg">Message</label><textarea id="msg" name="message" rows="5" required></textarea></div>
+<div><button class="btn btn-primary" type="submit">Send message</button></div>
+</form>
+</div>
+</section>
+</div>
+<div class="pg" data-page="privacy" hidden>
+<div class="wrap page-intro prose">
+<h1 class="h1">Privacy</h1>
+<p>[FULL PRIVACY NOTICE TO BE ADDED BEFORE LAUNCH]</p>
+<h2>This website</h2>
+<p>If you join the waitlist or send us a message, we keep your name, email and message so we can reply and tell you when MyScribe launches. We don't sell it or share it for marketing.</p>
+<p>To be removed from the waitlist, email <a href="mailto:hello@hellomyscribe.com">hello@hellomyscribe.com</a>.</p>
+<h2>Who we are</h2>
+<p>MyScribe is made by Opsimath Ltd. [COMPANY NUMBER AND REGISTERED ADDRESS]</p>
+</div>
+</div>
+<div class="pg" data-page="thank-you" hidden>
+<div class="wrap page-intro" style="padding-bottom:120px">
+<h1 class="h1">Thank you.</h1>
+<p class="lead" style="margin-bottom:36px">We've got your details and we'll be in touch.</p>
+<a class="btn btn-outline" href="#home">Back to home</a>
+</div>
+</div>
+</main><footer class="site-footer">
+<div class="wrap">
+<p class="footer-tag">For every conversation that matters.</p>
+<div class="footer-links">
+<span>MyScribe is made by Opsimath Ltd</span>
+<a href="mailto:hello@hellomyscribe.com">hello@hellomyscribe.com</a>
+<a href="#privacy">Privacy</a>
+</div>
+</div>
+</footer><script>
+function show(){var h=(location.hash||"#home").slice(1);if(!document.querySelector('[data-page="'+h+'"]'))h="home";
+document.querySelectorAll(".pg").forEach(function(p){p.hidden=p.dataset.page!==h});
+document.querySelectorAll(".nav a").forEach(function(a){a.getAttribute("href")==="#"+h&&!a.classList.contains("btn")?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current")});
+window.scrollTo(0,0);}
+window.addEventListener("hashchange",show);show();
+</script></body></html>
