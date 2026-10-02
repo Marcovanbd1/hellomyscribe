@@ -29,7 +29,7 @@
   if (!phone || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var ask = phone.querySelector('.scene-ask'), rec = phone.querySelector('.scene-rec'), sum = phone.querySelector('.scene-sum');
   var words = phone.querySelectorAll('.words span'), wordsBox = phone.querySelector('.words');
-  var items = phone.querySelectorAll('.sum-list li'), actions = phone.querySelector('.sum-actions');
+  var items = phone.querySelectorAll('.sum-list li'), actions = phone.querySelector('.sum-actions'), hint = phone.querySelector('.sum-hint');
   var timeEl = phone.querySelector('.rec-time'), timers = [], clock;
   phone.querySelectorAll('.wave span').forEach(function (b) {
     b.style.animationDuration = (0.6 + Math.random() * 0.8).toFixed(2) + 's';
@@ -42,7 +42,7 @@
     phone.classList.remove('press'); wordsBox.classList.remove('gather');
     words.forEach(function (w) { w.classList.remove('in'); });
     items.forEach(function (i) { i.classList.remove('in'); });
-    actions.classList.remove('in'); timeEl.textContent = '00:00';
+    actions.classList.remove('in'); if (hint) hint.classList.remove('in'); timeEl.textContent = '00:00';
   }
   function run() {
     reset(); show(ask);
@@ -55,7 +55,7 @@
     at(7800, function () { clearInterval(clock); wordsBox.classList.add('gather'); });
     at(8700, function () { show(sum); });
     items.forEach(function (it, i) { at(9100 + i * 550, function () { it.classList.add('in'); }); });
-    at(10900, function () { actions.classList.add('in'); });
+    at(10900, function () { actions.classList.add('in'); if (hint) hint.classList.add('in'); });
     at(15500, run);
   }
   run();
