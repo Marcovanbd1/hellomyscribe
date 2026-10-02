@@ -14,6 +14,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Source+Sans+3:wght@400;600&display=swap">
 <link rel="stylesheet" href="/styles.css">
+<style>
+/* New in this update: trust row, FAQ, section intro line, bigger-idea line.
+   Kept small so it sits on top of styles.css. Move into styles.css when happy. */
+.section-lead { max-width: 52ch; margin: -0.25rem 0 2rem; font-size: 1.15rem; }
+.trust { list-style: none; margin: 1.25rem 0 0; padding: 1rem 0 0; border-top: 1px solid rgba(11,110,105,.2); display: grid; gap: .65rem; }
+.trust li { display: flex; align-items: center; gap: .6rem; font-size: .98rem; }
+.trust svg { flex: none; width: 22px; height: 22px; color: #0B6E69; }
+.faq { max-width: 46rem; }
+.faq details { border-top: 1px solid rgba(11,110,105,.2); padding: 1rem 0; }
+.faq details:last-child { border-bottom: 1px solid rgba(11,110,105,.2); }
+.faq summary { cursor: pointer; font-weight: 600; font-size: 1.12rem; list-style-position: outside; }
+.faq summary:focus-visible { outline: 3px solid #0B6E69; outline-offset: 3px; }
+.faq details p { margin: .75rem 0 0; max-width: 62ch; }
+.more-link { display: inline-block; margin-top: 1.5rem; font-weight: 600; }
+.footer-next { margin: .25rem 0 1rem; opacity: .8; }
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -33,8 +49,8 @@
 <section class="hero">
 <div class="hero-text">
 <p class="eyebrow">A memory aid for your appointments</p>
-<h1 class="h1">“Do you mind if I record this? Just to help me remember.”</h1>
-<p class="lead">MyScribe records your conversation on your phone, with permission, and gives you a faithful summary to look back on and share with the people you choose.</p>
+<h1 class="h1">Was it two weeks, or ten days?</h1>
+<p class="lead">You'll never have to wonder again. MyScribe records your appointment on your phone, with permission, and gives you a faithful summary to look back on, ask about, and share with the people you choose.</p>
 <div class="actions">
 <a class="btn btn-primary" href="#waitlist">Join the waitlist</a>
 <a class="btn btn-outline" href="/how-it-works">See how it works</a>
@@ -124,6 +140,60 @@
 </div>
 </section>
 
+<!-- NEW: carers -->
+<section class="section" id="family">
+<div class="wrap">
+<h2 class="h2">For the people who couldn't be in the room</h2>
+<p class="section-lead soft">Not everyone can make it to every appointment. Share your Faithful Summary with a daughter, a partner, or whoever helps you look after your health, so they know what was actually said.</p>
+<div class="grid grid-2">
+<div class="feature"><h3>The real words, not a retelling</h3><p class="soft">No more passing on half-remembered details. They see the same Faithful Summary you do, linked to what was said.</p></div>
+<div class="feature"><h3>You choose who sees it</h3><p class="soft">Nothing is shared unless you share it. Your appointment stays yours.</p></div>
+<div class="feature"><h3>Help with the details</h3><p class="soft">Sorting tablets on a Sunday, or booking the follow-up. Whoever is helping can check the plan with you.</p></div>
+<div class="feature"><h3>A thoughtful thing to set up</h3><p class="soft">Helping a parent with their appointments? Set MyScribe up on their phone and keep each other in the loop.</p></div>
+</div>
+</div>
+</section>
+
+<!-- NEW: clinicians -->
+<section class="section section-tint" id="clinicians">
+<div class="wrap">
+<h2 class="h2">For clinicians</h2>
+<p class="section-lead soft">Patients already record appointments, sometimes without saying so. MyScribe makes it open, polite and faithful to what you said.</p>
+<div class="grid grid-2">
+<div class="feature"><h3>Nothing interpreted</h3><p class="soft">MyScribe writes down what was said. It doesn't diagnose, advise or add anything of its own.</p></div>
+<div class="feature"><h3>Asked out loud, every time</h3><p class="soft">The app opens on the consent question, so recording is never a surprise.</p></div>
+<div class="feature"><h3>Unclear words are flagged</h3><p class="soft">If something wasn't heard clearly, it's marked for the patient to check, not guessed.</p></div>
+<div class="feature"><h3>Fewer repeat calls</h3><p class="soft">Patients who remember the plan don't need to ring reception to ask what the doctor said.</p></div>
+</div>
+<a class="more-link" href="/organisations">For practices, PCNs and ICBs</a>
+</div>
+</section>
+
+<!-- NEW: FAQ -->
+<section class="section" id="questions">
+<div class="wrap">
+<h2 class="h2">Good questions</h2>
+<div class="faq">
+<details>
+<summary>Am I allowed to record my appointment?</summary>
+<p class="soft">Yes. In the UK you don't need your doctor's permission to record your own appointment, because it's your own personal information. The Medical Defence Union, which advises doctors, says the same. MyScribe still opens on the question, because asking openly is the kind thing to do.</p>
+</details>
+<details>
+<summary>Will my doctor mind?</summary>
+<p class="soft">Asking openly makes a real difference. Medical defence organisations encourage doctors to welcome open recording, as it helps patients remember. If your doctor would rather you didn't, you can simply not record.</p>
+</details>
+<details>
+<summary>What happens to the recording?</summary>
+<p class="soft">The audio is deleted once it has been written down. You keep the words and your Faithful Summary, not the recording.</p>
+</details>
+<details>
+<summary>Who can see my appointment?</summary>
+<p class="soft">Only you, and the people you choose to share it with.</p>
+</details>
+</div>
+</div>
+</section>
+
 <section class="section section-dark">
 <div class="wrap"><p class="statement">Your appointment. Your record. On your phone. To share with who you choose.</p></div>
 </section>
@@ -143,6 +213,12 @@
 </div>
 <p class="form-note">We'll only use your email to tell you about MyScribe. <a href="/privacy">Privacy</a></p>
 </form>
+<!-- NEW: trust row. Confirm each claim matches the final architecture before going live. -->
+<ul class="trust" aria-label="How we look after your appointment">
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Kept in the UK or EU</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>Never sold, never used to train AI</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>Audio deleted once it's written down</li>
+</ul>
 </div>
 <div class="panel panel-line">
 <h2>For organisations</h2>
@@ -155,6 +231,7 @@
 <footer class="site-footer">
 <div class="wrap">
 <p class="footer-tag">For every conversation that matters.</p>
+<p class="footer-next">Starting with healthcare. Built for every conversation.</p>
 <div class="footer-links">
 <span>MyScribe is made by Opsimath Ltd, registered in England and Wales, company number 17461745</span>
 <a href="mailto:hello@hellomyscribe.com">hello@hellomyscribe.com</a>
