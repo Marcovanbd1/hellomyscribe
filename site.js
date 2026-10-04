@@ -29,7 +29,8 @@
   if (!phone || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var ask = phone.querySelector('.scene-ask'), rec = phone.querySelector('.scene-rec'), sum = phone.querySelector('.scene-sum');
   var words = phone.querySelectorAll('.words span'), wordsBox = phone.querySelector('.words');
-  var items = phone.querySelectorAll('.sum-list li'), actions = phone.querySelector('.sum-actions'), hint = phone.querySelector('.sum-hint');
+  // MySummary: the summary paragraph, then the AI footer, fade in one after the other
+  var items = phone.querySelectorAll('.sum-text, .sum-foot'), actions = phone.querySelector('.sum-actions'), hint = phone.querySelector('.sum-hint');
   var timeEl = phone.querySelector('.rec-time'), timers = [], clock;
   phone.querySelectorAll('.wave span').forEach(function (b) {
     b.style.animationDuration = (0.6 + Math.random() * 0.8).toFixed(2) + 's';
@@ -54,9 +55,10 @@
     words.forEach(function (w, i) { at(3300 + i * 1000, function () { w.classList.add('in'); }); });
     at(7800, function () { clearInterval(clock); wordsBox.classList.add('gather'); });
     at(8700, function () { show(sum); });
-    items.forEach(function (it, i) { at(9100 + i * 550, function () { it.classList.add('in'); }); });
+    items.forEach(function (it, i) { at(9100 + i * 900, function () { it.classList.add('in'); }); });
     at(10900, function () { actions.classList.add('in'); if (hint) hint.classList.add('in'); });
-    at(15500, run);
+    // Hold a little longer than before, so the paragraph can actually be read
+    at(17000, run);
   }
   run();
 })();
