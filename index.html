@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MyScribe | For every conversation that matters</title>
-<meta name="description" content="MyScribe records your appointment on your phone, with permission, and gives you a faithful summary to look back on and share with the people you choose.">
+<meta name="description" content="MyScribe records your appointment on your phone, with permission, and gives you a clear summary and the full conversation to look back on and share with the people you choose.">
 <meta property="og:title" content="MyScribe | For every conversation that matters">
-<meta property="og:description" content="MyScribe records your appointment on your phone, with permission, and gives you a faithful summary to look back on and share with the people you choose.">
+<meta property="og:description" content="MyScribe records your appointment on your phone, with permission, and gives you a clear summary and the full conversation to look back on and share with the people you choose.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0B6E69">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -29,6 +29,10 @@
 .faq details p { margin: .75rem 0 0; max-width: 62ch; }
 .more-link { display: inline-block; margin-top: 1.5rem; font-weight: 600; }
 .footer-next { margin: .25rem 0 1rem; opacity: .8; }
+/* MySummary mockup: short prose summary with tappable phrases and a fixed footer. */
+.sum-text { margin: .5rem 0 .6rem; line-height: 1.45; }
+.sum-link { text-decoration: underline; text-decoration-color: rgba(11,110,105,.5); text-decoration-thickness: 2px; text-underline-offset: 2px; }
+.sum-foot { margin: .6rem 0 .75rem; padding-top: .5rem; border-top: 1px solid rgba(11,110,105,.2); font-size: .78em; line-height: 1.35; opacity: .8; }
 </style>
 </head>
 <body>
@@ -50,7 +54,7 @@
 <div class="hero-text">
 <p class="eyebrow">A memory aid for your health appointments</p>
 <h1 class="h1">Was it two weeks, or ten days?</h1>
-<p class="lead">You'll never have to wonder again. MyScribe records your appointment on your phone, with permission, and gives you a faithful summary to look back on, ask about, and share with the people you choose.</p>
+<p class="lead">You'll never have to wonder again. MyScribe records your appointment on your phone, with permission, and gives you a clear summary to look back on, the full conversation to ask about, and both to share with the people you choose.</p>
 <div class="actions">
 <a class="btn btn-primary" href="#waitlist">Join the waitlist</a>
 <a class="btn btn-outline" href="/how-it-works">See how it works</a>
@@ -91,14 +95,11 @@
 </div>
 </div>
 <div class="scene scene-sum">
-<p class="sum-kicker">Faithful Summary</p>
+<p class="sum-kicker">MySummary</p>
 <p class="sum-title">GP appointment, today</p>
-<ul class="sum-list">
-<li>Start the new tablet tomorrow, one each morning with breakfast.</li>
-<li>Blood test in about two weeks.</li>
-<li>Ring the surgery if the cough isn't better in ten days.</li>
-</ul>
-<p class="sum-hint">Tap any line to see the words it came from.</p>
+<p class="sum-text">You talked about your cough. The clinician would like you to have a <span class="sum-link">blood test in about two weeks</span>, and to <span class="sum-link">ring the surgery if it isn't better in ten days</span>. They also <span class="sum-link">talked about starting a new medicine</span>.</p>
+<p class="sum-hint">Tap any underlined part to see the exact words.</p>
+<p class="sum-foot">Written by AI from your conversation, so it may miss things. If anything is unclear, check the full conversation or ask your clinician.</p>
 <div class="sum-actions">
 <span class="listen"><span class="play"></span>Read aloud</span>
 <span class="share">Share</span>
@@ -123,7 +124,7 @@
 <ol class="grid" style="list-style:none;margin:0;padding:0">
 <li class="step"><h3>1. Ask</h3><p class="soft">MyScribe opens on the question. Ask it out loud, so everyone in the room knows.</p></li>
 <li class="step"><h3>2. Record</h3><p class="soft">One button. Put your phone down and listen to the person in front of you.</p></li>
-<li class="step"><h3>3. Remember</h3><p class="soft">Get a Faithful Summary in plain words. Read it, have it read aloud, or share it with family.</p></li>
+<li class="step"><h3>3. Remember</h3><p class="soft">Get MySummary in plain words. Read it, have it read aloud, ask your appointment anything, or share it with family.</p></li>
 </ol>
 </div>
 </section>
@@ -132,8 +133,8 @@
 <div class="wrap">
 <h2 class="h2">The words, not a guess</h2>
 <div class="grid grid-2">
-<div class="feature"><h3>Every line links back</h3><p class="soft">Each point in your Faithful Summary takes you to the words that were actually said.</p></div>
-<div class="feature"><h3>Ask what was said</h3><p class="soft">“Was it one tablet or two?” MyScribe takes you straight to the answer, in the clinician's own words.</p></div>
+<div class="feature"><h3>Every summary links back</h3><p class="soft">Tap any part of MySummary to go to the words that were actually said.</p></div>
+<div class="feature"><h3>Ask Your Appointment</h3><p class="soft">“Was it one tablet or two?” Ask, and MyScribe takes you straight to the answer, in the clinician's own words, to read or hear aloud.</p></div>
 <div class="feature"><h3>Unclear words are flagged</h3><p class="soft">If something wasn't heard clearly, MyScribe marks it, so you know what to check.</p></div>
 <div class="feature"><h3>No tape left behind</h3><p class="soft">The audio is deleted once it's been written down. You keep the words, not the recording.</p></div>
 </div>
@@ -144,9 +145,9 @@
 <section class="section" id="family">
 <div class="wrap">
 <h2 class="h2">For the people who couldn't be in the room</h2>
-<p class="section-lead soft">Not everyone can make it to every appointment. Share your Faithful Summary with a daughter, a partner, or whoever helps you look after your health, so they know what was actually said.</p>
+<p class="section-lead soft">Not everyone can make it to every appointment. Share your MySummary with a daughter, a partner, or whoever helps you look after your health, so they know what was actually said.</p>
 <div class="grid grid-2">
-<div class="feature"><h3>The real words, not a retelling</h3><p class="soft">No more passing on half-remembered details. They see the same Faithful Summary you do, linked to what was said.</p></div>
+<div class="feature"><h3>The summary, and the real words behind it</h3><p class="soft">No more passing on half-remembered details. They see the same MySummary you do, with the full conversation there to check.</p></div>
 <div class="feature"><h3>You choose who sees it</h3><p class="soft">Nothing is shared unless you share it. Your appointment stays yours.</p></div>
 <div class="feature"><h3>Help with the details</h3><p class="soft">Sorting tablets on a Sunday, or booking the follow-up. Whoever is helping can check the plan with you.</p></div>
 <div class="feature"><h3>A thoughtful thing to set up</h3><p class="soft">Helping a parent with their appointments? Set MyScribe up on their phone and keep each other in the loop.</p></div>
@@ -160,7 +161,7 @@
 <h2 class="h2">For clinicians</h2>
 <p class="section-lead soft">Patients already record appointments, sometimes without saying so. MyScribe makes it open, polite and faithful to what you said.</p>
 <div class="grid grid-2">
-<div class="feature"><h3>Nothing interpreted</h3><p class="soft">MyScribe writes down what was said. It doesn't diagnose, advise or add anything of its own.</p></div>
+<div class="feature"><h3>Nothing added</h3><p class="soft">MyScribe writes down what was said and summarises it in plain words. It doesn't diagnose, advise or add anything of its own. Medicine names and doses are left out of the summary, so patients check your exact words.</p></div>
 <div class="feature"><h3>Asked out loud, every time</h3><p class="soft">The app opens on the consent question, so recording is never a surprise.</p></div>
 <div class="feature"><h3>Unclear words are flagged</h3><p class="soft">If something wasn't heard clearly, it's marked for the patient to check, not guessed.</p></div>
 <div class="feature"><h3>Fewer repeat calls</h3><p class="soft">Patients who remember the plan don't need to ring reception to ask what the doctor said.</p></div>
@@ -184,7 +185,11 @@
 </details>
 <details>
 <summary>What happens to the recording?</summary>
-<p class="soft">The audio is deleted once it has been written down. You keep the words and your Faithful Summary, not the recording.</p>
+<p class="soft">The audio is deleted once it has been written down. You keep the words and your MySummary, not the recording.</p>
+</details>
+<details>
+<summary>Is the summary always right?</summary>
+<p class="soft">MySummary is written by AI, so it may miss things. That's why the full conversation is always there to check, and why the summary leaves out medicine names and doses. If anything is unclear, check the full conversation or ask your clinician.</p>
 </details>
 <details>
 <summary>Who can see my appointment?</summary>
