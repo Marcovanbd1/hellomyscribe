@@ -33,6 +33,13 @@
 .sum-text { margin: .5rem 0 .6rem; line-height: 1.45; }
 .sum-link { text-decoration: underline; text-decoration-color: rgba(11,110,105,.5); text-decoration-thickness: 2px; text-underline-offset: 2px; }
 .sum-foot { margin: .6rem 0 .75rem; padding-top: .5rem; border-top: 1px solid rgba(11,110,105,.2); font-size: .78em; line-height: 1.35; opacity: .8; }
+/* Demo reveal: hidden until site.js adds .in. Only applies when motion is allowed,
+   because site.js skips the demo for reduced-motion users and they must still see the text. */
+@media (prefers-reduced-motion: no-preference) {
+  .scene-sum .sum-text, .scene-sum .sum-foot { opacity: 0; transform: translateY(6px); transition: opacity .5s ease, transform .5s ease; }
+  .scene-sum .sum-text.in { opacity: 1; transform: none; }
+  .scene-sum .sum-foot.in { opacity: .8; transform: none; }
+}
 </style>
 </head>
 <body>
