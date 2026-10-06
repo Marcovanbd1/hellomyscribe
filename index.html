@@ -15,8 +15,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Source+Sans+3:wght@400;600&display=swap">
 <link rel="stylesheet" href="/styles.css">
 <style>
-/* New in this update: trust row, FAQ, section intro line, bigger-idea line.
-   Kept small so it sits on top of styles.css. Move into styles.css when happy. */
 .section-lead { max-width: 52ch; margin: -0.25rem 0 2rem; font-size: 1.15rem; }
 .trust { list-style: none; margin: 1.25rem 0 0; padding: 1rem 0 0; border-top: 1px solid rgba(11,110,105,.2); display: grid; gap: .65rem; }
 .trust li { display: flex; align-items: center; gap: .6rem; font-size: .98rem; }
@@ -29,17 +27,68 @@
 .faq details p { margin: .75rem 0 0; max-width: 62ch; }
 .more-link { display: inline-block; margin-top: 1.5rem; font-weight: 600; }
 .footer-next { margin: .25rem 0 1rem; opacity: .8; }
-/* MySummary mockup: short prose summary with tappable phrases and a fixed footer. */
 .sum-text { margin: .5rem 0 .6rem; line-height: 1.45; }
 .sum-link { text-decoration: underline; text-decoration-color: rgba(11,110,105,.5); text-decoration-thickness: 2px; text-underline-offset: 2px; }
 .sum-foot { margin: .6rem 0 .75rem; padding-top: .5rem; border-top: 1px solid rgba(11,110,105,.2); font-size: .78em; line-height: 1.35; opacity: .8; }
-/* Demo reveal: hidden until site.js adds .in. Only applies when motion is allowed,
-   because site.js skips the demo for reduced-motion users and they must still see the text. */
 @media (prefers-reduced-motion: no-preference) {
   .scene-sum .sum-text, .scene-sum .sum-foot { opacity: 0; transform: translateY(6px); transition: opacity .5s ease, transform .5s ease; }
   .scene-sum .sum-text.in { opacity: 1; transform: none; }
   .scene-sum .sum-foot.in { opacity: .8; transform: none; }
 }
+
+.trust-hero { margin-top: 2rem; padding-top: 1.1rem; max-width: 24rem; gap: .55rem; }
+.trust-hero li { font-size: 1rem; font-weight: 600; color: var(--ink); }
+@media (max-width: 640px) {
+  .hero { padding-top: 16px; }
+  .hero .eyebrow { margin-bottom: 12px; }
+  .hero .h1 { margin-bottom: 16px; }
+  .hero .lead { font-size: 18.5px; margin-bottom: 24px; }
+  .hero .actions .btn { min-height: 46px; padding: 10px 20px; }
+  .trust-hero { margin-top: 1.25rem; padding-top: .85rem; gap: .4rem; }
+  .trust-hero li { font-size: .95rem; }
+}
+.steps .step { border-top: 0; padding-top: 0; }
+.shot { background: var(--mist); border-radius: 20px; height: 282px; padding: 28px 24px 0; display: flex; justify-content: center; overflow: hidden; margin-bottom: 24px; }
+.mini { width: 220px; border: 8px solid var(--ink); border-bottom: 0; border-radius: 34px 34px 0 0; background: #F4F7F6; padding: 18px 16px 0; display: flex; flex-direction: column; gap: 12px; font-size: 13px; line-height: 1.35; }
+.mini-app { font-family: var(--display); font-weight: 800; font-size: 15px; letter-spacing: -0.02em; }
+.mini-card { background: #fff; border-radius: 14px; padding: 12px 14px; }
+.mini-card small { display: block; font-size: 11px; font-weight: 600; color: var(--accent); margin-bottom: 4px; }
+.mini-card p { font-family: var(--display); font-weight: 700; font-size: 14.5px; line-height: 1.25; }
+.mini-rec { display: flex; flex-direction: column; align-items: center; gap: 6px; font-weight: 600; font-size: 12px; }
+.mini-btn { width: 56px; height: 56px; border-radius: 50%; border: 3px solid var(--ink); background: #fff; display: flex; align-items: center; justify-content: center; }
+.mini-dot { width: 38px; height: 38px; border-radius: 50%; background: #C8372D; }
+.mini-stop { width: 20px; height: 20px; border-radius: 5px; background: #C8372D; }
+.mini-status { font-size: 12.5px; font-weight: 600; display: flex; align-items: center; gap: 7px; margin-top: 4px; }
+.mini-wave { display: flex; align-items: center; justify-content: center; gap: 3px; height: 44px; }
+.mini-wave span { width: 3px; border-radius: 2px; background: var(--accent); opacity: .85; height: 10px; }
+.mini-wave span:nth-child(3n) { height: 30px; } .mini-wave span:nth-child(4n+1) { height: 20px; } .mini-wave span:nth-child(5n+2) { height: 40px; } .mini-wave span:nth-child(7n) { height: 14px; }
+.mini-words { color: var(--ink-soft); min-height: 36px; }
+.mini-kicker { font-size: 11px; font-weight: 600; color: var(--accent); }
+.mini-title { font-family: var(--display); font-weight: 800; font-size: 15px; letter-spacing: -0.02em; margin-top: -8px; }
+.mini-sum { line-height: 1.45; }
+.mini-actions { display: flex; gap: 8px; }
+.mini-actions .listen, .mini-actions .share { padding: 7px 12px; font-size: 12px; white-space: nowrap; }
+.mini-actions .play { border-left-width: 7px; border-top-width: 5px; border-bottom-width: 5px; }
+.snip { background: #fff; border-radius: 16px; padding: 18px 20px; margin-bottom: 20px; min-height: 172px; font-size: 15px; line-height: 1.45; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+.snip small { display: block; font-size: 12px; font-weight: 600; color: var(--accent); margin-bottom: 2px; }
+.snip-sum { color: var(--ink-soft); }
+.sum-link.is-active { background: rgba(11,110,105,.12); border-radius: 4px; padding: 0 2px; }
+.snip-quote { border-left: 3px solid var(--accent); padding: 2px 0 2px 12px; color: var(--ink); }
+.bub { border-radius: 14px; padding: 9px 13px; max-width: 88%; }
+.bub-you { align-self: flex-end; background: var(--accent); color: #fff; border-bottom-right-radius: 4px; font-weight: 600; }
+.bub-ans { align-self: flex-start; background: var(--mist); border-bottom-left-radius: 4px; }
+.bub-play { display: flex; align-items: center; gap: 6px; margin-top: 6px; font-size: 12.5px; font-weight: 600; color: var(--accent); }
+.bub-play .play { border-left: 7px solid var(--accent); border-top-width: 5px; border-bottom-width: 5px; }
+.snip-line { color: var(--ink-soft); }
+.flag { background: #FBEBC8; color: var(--ink); border-bottom: 2px dashed #A86A12; padding: 0 2px; border-radius: 3px; }
+.flag-note { display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: #7A4D0D; }
+.flag-icon { width: 20px; height: 20px; flex: none; border-radius: 50%; background: #A86A12; color: #fff; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.snip-row { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--ink-soft); }
+.snip-row strong { color: var(--ink); }
+.snip-ico { width: 36px; height: 36px; flex: none; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+.snip-ico svg { width: 20px; height: 20px; }
+.ico-gone { background: var(--mist); color: var(--muted); }
+.ico-kept { background: rgba(11,110,105,.12); color: var(--accent); }
 </style>
 </head>
 <body>
@@ -66,6 +115,11 @@
 <a class="btn btn-primary" href="#waitlist">Join the waitlist</a>
 <a class="btn btn-outline" href="/how-it-works">See how it works</a>
 </div>
+<ul class="trust trust-hero" aria-label="How we look after your appointment">
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>Never sold, never used to train AI</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>Audio deleted once it's written down</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Kept in the UK or EU</li>
+</ul>
 </div>
 <div class="hero-phone" aria-hidden="true">
 <div class="phone" data-demo>
@@ -128,10 +182,30 @@
 <section class="section">
 <div class="wrap">
 <h2 class="h2">Three steps. Nothing to learn.</h2>
-<ol class="grid" style="list-style:none;margin:0;padding:0">
-<li class="step"><h3>1. Ask</h3><p class="soft">MyScribe opens on the question. Ask it out loud, so everyone in the room knows.</p></li>
-<li class="step"><h3>2. Record</h3><p class="soft">One button. Put your phone down and listen to the person in front of you.</p></li>
-<li class="step"><h3>3. Remember</h3><p class="soft">Get MySummary in plain words. Read it, have it read aloud, ask your appointment anything, or share it with family.</p></li>
+<ol class="grid steps" style="list-style:none;margin:0;padding:0">
+<li class="step">
+<div class="shot" aria-hidden="true"><div class="mini">
+<p class="mini-app">MyScribe</p>
+<div class="mini-card"><small>Ask first</small><p>“Do you mind if I record this? Just to help me remember.”</p></div>
+<div class="mini-rec"><span class="mini-btn"><span class="mini-dot"></span></span><span>Start recording</span></div>
+</div></div>
+<h3>1. Ask</h3><p class="soft">MyScribe opens on the question. Ask it out loud, so everyone in the room knows.</p></li>
+<li class="step">
+<div class="shot" aria-hidden="true"><div class="mini">
+<p class="mini-status"><span class="rec-live"></span>Recording <span class="rec-time">06:12</span></p>
+<div class="mini-wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+<p class="mini-words">…and I'd like a blood test in about two weeks…</p>
+<div class="mini-rec"><span class="mini-btn"><span class="mini-stop"></span></span><span>Stop</span></div>
+</div></div>
+<h3>2. Record</h3><p class="soft">One button. Put your phone down and listen to the person in front of you.</p></li>
+<li class="step">
+<div class="shot" aria-hidden="true"><div class="mini">
+<p class="mini-kicker">MySummary</p>
+<p class="mini-title">GP appointment, today</p>
+<p class="mini-sum">The clinician would like you to have a <span class="sum-link">blood test in about two weeks</span>, and to <span class="sum-link">ring if it isn't better in ten days</span>.</p>
+<div class="mini-actions"><span class="listen"><span class="play"></span>Read aloud</span><span class="share">Share</span></div>
+</div></div>
+<h3>3. Remember</h3><p class="soft">Get MySummary in plain words. Read it, have it read aloud, ask your appointment anything, or share it with family.</p></li>
 </ol>
 </div>
 </section>
@@ -140,15 +214,26 @@
 <div class="wrap">
 <h2 class="h2">The words, not a guess</h2>
 <div class="grid grid-2">
-<div class="feature"><h3>Every summary links back</h3><p class="soft">Tap any part of MySummary to go to the words that were actually said.</p></div>
-<div class="feature"><h3>Ask Your Appointment</h3><p class="soft">“Was it one tablet or two?” Ask, and MyScribe takes you straight to the answer, in the clinician's own words, to read or hear aloud.</p></div>
-<div class="feature"><h3>Unclear words are flagged</h3><p class="soft">If something wasn't heard clearly, MyScribe marks it, so you know what to check.</p></div>
-<div class="feature"><h3>No tape left behind</h3><p class="soft">The audio is deleted once it's been written down. You keep the words, not the recording.</p></div>
+<div class="feature"><div class="snip" aria-hidden="true">
+<p class="snip-sum">…to have a <span class="sum-link is-active">blood test in about two weeks</span>, and…</p>
+<div class="snip-quote"><small>Exact words, 06:12</small>“…and I'd like a blood test in about two weeks…”</div>
+</div><h3>Every summary links back</h3><p class="soft">Tap any part of MySummary to go to the words that were actually said.</p></div>
+<div class="feature"><div class="snip snip-chat" aria-hidden="true">
+<p class="bub bub-you">Was it one tablet or two?</p>
+<p class="bub bub-ans"><small>Clinician, 04:38</small>“…one each morning, with breakfast…”<span class="bub-play"><span class="play"></span>Read aloud</span></p>
+</div><h3>Ask Your Appointment</h3><p class="soft">“Was it one tablet or two?” Ask, and MyScribe takes you straight to the answer, in the clinician's own words, to read or hear aloud.</p></div>
+<div class="feature"><div class="snip" aria-hidden="true">
+<p class="snip-line">“…come back to us if it's <mark class="flag">still swollen</mark> by Friday…”</p>
+<p class="flag-note"><span class="flag-icon">!</span>Not heard clearly. Check this part.</p>
+</div><h3>Unclear words are flagged</h3><p class="soft">If something wasn't heard clearly, MyScribe marks it, so you know what to check.</p></div>
+<div class="feature"><div class="snip snip-list" aria-hidden="true">
+<p class="snip-row"><span class="snip-ico ico-gone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></span><span><strong>Audio</strong><br>Deleted once written down</span></p>
+<p class="snip-row"><span class="snip-ico ico-kept"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span><strong>Words and MySummary</strong><br>Yours to keep</span></p>
+</div><h3>No tape left behind</h3><p class="soft">The audio is deleted once it's been written down. You keep the words, not the recording.</p></div>
 </div>
 </div>
 </section>
 
-<!-- NEW: carers -->
 <section class="section" id="family">
 <div class="wrap">
 <h2 class="h2">For the people who couldn't be in the room</h2>
@@ -162,7 +247,6 @@
 </div>
 </section>
 
-<!-- NEW: clinicians -->
 <section class="section section-tint" id="clinicians">
 <div class="wrap">
 <h2 class="h2">For clinicians</h2>
@@ -177,7 +261,6 @@
 </div>
 </section>
 
-<!-- NEW: FAQ -->
 <section class="section" id="questions">
 <div class="wrap">
 <h2 class="h2">Good questions</h2>
@@ -229,11 +312,10 @@
 </div>
 <p class="form-note">We'll only use your email to tell you about MyScribe. <a href="/privacy">Privacy</a></p>
 </form>
-<!-- NEW: trust row. Confirm each claim matches the final architecture before going live. -->
 <ul class="trust" aria-label="How we look after your appointment">
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Kept in the UK or EU</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>Never sold, never used to train AI</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>Audio deleted once it's written down</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Kept in the UK or EU</li>
 </ul>
 </div>
 <div class="panel panel-line">
