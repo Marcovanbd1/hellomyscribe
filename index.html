@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MyScribe | For every conversation that matters</title>
-<meta name="description" content="MyScribe records your appointment on your phone, with permission, and gives you a clear summary and the full conversation to look back on and share with the people you choose.">
+<meta name="description" content="MyScribe records your appointment on your phone, with permission, and writes the story of what happened in plain words. Ask it anything, and it shows you exactly what was said.">
 <meta property="og:title" content="MyScribe | For every conversation that matters">
-<meta property="og:description" content="MyScribe records your appointment on your phone, with permission, and gives you a clear summary and the full conversation to look back on and share with the people you choose.">
+<meta property="og:description" content="MyScribe records your appointment on your phone, with permission, and writes the story of what happened in plain words. Ask it anything, and it shows you exactly what was said.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0B6E69">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -89,13 +89,15 @@
 .snip-ico svg { width: 20px; height: 20px; }
 .ico-gone { background: var(--mist); color: var(--muted); }
 .ico-kept { background: rgba(11,110,105,.12); color: var(--accent); }
+.logo { display: inline-flex; align-items: center; gap: .45em; }
+.logo-mark { height: 1.15em; width: auto; flex: none; color: var(--accent, #0B6E69); }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
 <div class="wrap">
-<a class="logo" href="/">MyScribe</a>
+<a class="logo" href="/"><svg class="logo-mark" viewBox="4 14 162 100" fill="none" aria-hidden="true" focusable="false"><path d="M10 104c12-30 20-30 24-8s14 20 22-2 16-26 22-4 12 22 22 0 14-26 22-6" stroke="currentColor" stroke-width="10" stroke-linecap="round"/><g transform="translate(128 52) rotate(35)"><path d="M-9 -34h18l5 16-14 30-14-30z" fill="currentColor"/></g></svg>MyScribe</a>
 <nav class="nav" aria-label="Main">
 <a href="/how-it-works">How it works</a>
 <a href="/organisations">For organisations</a>
@@ -110,7 +112,7 @@
 <div class="hero-text">
 <p class="eyebrow">A memory aid for your health appointments</p>
 <h1 class="h1">Was it two weeks, or ten days?</h1>
-<p class="lead">You'll never have to wonder again. MyScribe records your appointment on your phone, with permission, and gives you a clear summary to look back on, the full conversation to ask about, and both to share with the people you choose.</p>
+<p class="lead">You'll never have to wonder again. MyScribe records your appointment on your phone, with permission, and writes the story of what happened in plain words. Ask it anything, and it shows you exactly what was said. Share it with the people you choose.</p>
 <div class="actions">
 <a class="btn btn-primary" href="#waitlist">Join the waitlist</a>
 <a class="btn btn-outline" href="/how-it-works">See how it works</a>
@@ -133,7 +135,7 @@
 </div>
 <div class="phone-rec">
 <span class="rec-btn"><span class="rec-dot"></span></span>
-<span class="rec-label">Start recording</span>
+<span class="rec-label">They're happy for me to record</span>
 </div>
 <div class="phone-list">
 <p class="phone-list-title">My conversations</p>
@@ -157,8 +159,8 @@
 </div>
 <div class="scene scene-sum">
 <p class="sum-kicker">Summary</p>
-<p class="sum-title">GP appointment, today</p>
-<p class="sum-text">You talked about your cough. The clinician would like you to have a <span class="sum-link">blood test in about two weeks</span>, and to <span class="sum-link">ring the surgery if it isn't better in ten days</span>. They also <span class="sum-link">talked about starting a new medicine</span>.</p>
+<p class="sum-title">Dr Patel, today</p>
+<p class="sum-text">You talked about your cough. Dr Patel said she'd like you to have a <span class="sum-link">blood test in about two weeks</span>, and to <span class="sum-link">ring the surgery if it isn't better in ten days</span>. You also <span class="sum-link">talked about starting a new medicine</span>.</p>
 <p class="sum-hint">Tap any underlined part to see the exact words.</p>
 <p class="sum-foot">Written by AI from your conversation, so it may miss things. If anything is unclear, check the full conversation or ask your clinician.</p>
 <div class="sum-actions">
@@ -187,7 +189,7 @@
 <div class="shot" aria-hidden="true"><div class="mini">
 <p class="mini-app">MyScribe</p>
 <div class="mini-card"><small>Ask first</small><p>“Do you mind if I record this? Just to help me remember.”</p></div>
-<div class="mini-rec"><span class="mini-btn"><span class="mini-dot"></span></span><span>Start recording</span></div>
+<div class="mini-rec"><span class="mini-btn"><span class="mini-dot"></span></span><span>They're happy for me to record</span></div>
 </div></div>
 <h3>1. Ask</h3><p class="soft">MyScribe opens on the question. Ask it out loud, so everyone in the room knows.</p></li>
 <li class="step">
@@ -201,11 +203,11 @@
 <li class="step">
 <div class="shot" aria-hidden="true"><div class="mini">
 <p class="mini-kicker">Summary</p>
-<p class="mini-title">GP appointment, today</p>
-<p class="mini-sum">The clinician would like you to have a <span class="sum-link">blood test in about two weeks</span>, and to <span class="sum-link">ring if it isn't better in ten days</span>.</p>
+<p class="mini-title">Dr Patel, today</p>
+<p class="mini-sum">Dr Patel said she'd like you to have a <span class="sum-link">blood test in about two weeks</span>, and to <span class="sum-link">ring if it isn't better in ten days</span>.</p>
 <div class="mini-actions"><span class="listen"><span class="play"></span>Read aloud</span><span class="share">Share</span></div>
 </div></div>
-<h3>3. Remember</h3><p class="soft">Get a short summary in plain words. Read it, have it read aloud, ask your appointment anything, or share it with family.</p></li>
+<h3>3. Remember</h3><p class="soft">Get the story of your appointment in plain words. Read it, have it read aloud, ask it anything, or share it with family.</p></li>
 </ol>
 </div>
 </section>
@@ -220,8 +222,8 @@
 </div><h3>Every summary links back</h3><p class="soft">Tap any part of the summary to go to the words that were actually said.</p></div>
 <div class="feature"><div class="snip snip-chat" aria-hidden="true">
 <p class="bub bub-you">Was it one tablet or two?</p>
-<p class="bub bub-ans"><small>Clinician, 04:38</small>“…one each morning, with breakfast…”<span class="bub-play"><span class="play"></span>Read aloud</span></p>
-</div><h3>Ask Your Appointment</h3><p class="soft">“Was it one tablet or two?” Ask, and MyScribe finds the moment it was said, in the clinician's own words, to read or hear aloud.</p></div>
+<p class="bub bub-ans"><small>Dr Patel, 04:38</small>“…one each morning, with breakfast…”<span class="bub-play"><span class="play"></span>Read aloud</span></p>
+</div><h3>Ask Your Conversation</h3><p class="soft">“Was it one tablet or two?” Ask, and MyScribe finds the moment it was said, in the exact words that were said, to read or have read aloud.</p></div>
 <div class="feature"><div class="snip" aria-hidden="true">
 <p class="snip-line">“…come back to us if it's <mark class="flag">still swollen</mark> by Friday…”</p>
 <p class="flag-note"><span class="flag-icon">!</span>Not heard clearly. Check this part.</p>
