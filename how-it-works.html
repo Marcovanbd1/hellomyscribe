@@ -17,13 +17,20 @@
 <style>
 .logo { display: inline-flex; align-items: center; gap: .45em; }
 .logo-mark { height: 1.15em; width: auto; flex: none; color: var(--accent, #0B6E69); }
+.logo-mark .lm-nib { transform-box: fill-box; transform-origin: 50% 100%; }
+@media (prefers-reduced-motion: no-preference) {
+  .logo-mark .lm-line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: lm-draw 1.3s ease-in-out .2s forwards; }
+  .logo-mark .lm-nib { opacity: 0; animation: lm-nib .4s ease-out 1.4s forwards; }
+}
+@keyframes lm-draw { to { stroke-dashoffset: 0; } }
+@keyframes lm-nib { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: none; } }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
 <div class="wrap">
-<a class="logo" href="/"><svg class="logo-mark" viewBox="4 14 162 100" fill="none" aria-hidden="true" focusable="false"><path d="M10 104c12-30 20-30 24-8s14 20 22-2 16-26 22-4 12 22 22 0 14-26 22-6" stroke="currentColor" stroke-width="10" stroke-linecap="round"/><g transform="translate(128 52) rotate(35)"><path d="M-9 -34h18l5 16-14 30-14-30z" fill="currentColor"/></g></svg>MyScribe</a>
+<a class="logo" href="/"><svg class="logo-mark" viewBox="4 14 162 100" fill="none" aria-hidden="true" focusable="false"><path class="lm-line" pathLength="1" d="M10 104c12-30 20-30 24-8s14 20 22-2 16-26 22-4 12 22 22 0 14-26 22-6" stroke="currentColor" stroke-width="10" stroke-linecap="round"/><g transform="translate(128 52) rotate(35)"><path class="lm-nib" d="M-9 -34h18l5 16-14 30-14-30z" fill="currentColor"/></g></svg>MyScribe</a>
 <nav class="nav" aria-label="Main">
 <a href="/how-it-works" aria-current="page">How it works</a>
 <a href="/organisations">For organisations</a>
