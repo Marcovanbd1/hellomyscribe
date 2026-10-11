@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MyScribe | For every conversation that matters</title>
-<meta name="description" content="MyScribe records your appointment on your phone, with permission, and writes the story of what happened in plain words. Ask it anything, and it shows you exactly what was said.">
+<meta name="description" content="MyScribe records your appointment, with permission, and shows you exactly what was said. A memory aid for your health appointments.">
 <meta property="og:title" content="MyScribe | For every conversation that matters">
 <meta property="og:description" content="MyScribe records your appointment on your phone, with permission, and writes the story of what happened in plain words. Ask it anything, and it shows you exactly what was said.">
 <meta property="og:type" content="website">
@@ -12,7 +12,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Manrope:wght@700;800&family=Source+Sans+3:wght@400;600&display=swap">
 <link rel="stylesheet" href="/styles.css">
 <style>
 .section-lead { max-width: 52ch; margin: -0.25rem 0 2rem; font-size: 1.15rem; }
@@ -99,6 +99,27 @@
 }
 @keyframes lm-draw { to { stroke-dashoffset: 0; } }
 @keyframes lm-nib { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: none; } }
+
+/* Harbour hero (Oct 2026): serif headline, logo and summary; pen underline */
+:root { --serif: "Fraunces", Georgia, "Times New Roman", serif; }
+.site-header .logo { font-family: var(--serif); font-weight: 600; font-size: 1.65rem; letter-spacing: -.01em; gap: .4em; }
+.site-header .logo-mark { height: 1.4em; }
+.hero .h1 { font-family: var(--serif); font-weight: 400; letter-spacing: -.02em; font-variation-settings: "opsz" 144; }
+.hero .h1 em { font-style: italic; color: var(--accent-dark, #08524E); }
+.soon { margin: 1rem 0 0; font-size: .92rem; color: var(--ink-soft); display: flex; align-items: center; gap: .5rem; }
+.soon::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent, #0B6E69); flex: none; }
+.scene-sum .sum-title, .scene-sum .sum-text, .phone-app { font-family: var(--serif); }
+.scene-sum .sum-title, .phone-app { font-weight: 600; letter-spacing: -.01em; }
+.ink-line { position: relative; white-space: nowrap; }
+.ink-line .ink-stroke { position: absolute; left: 0; right: 0; bottom: -.45em; width: 100%; height: .55em; overflow: visible; color: var(--accent, #0B6E69); }
+.ink-line .ink-nib { position: absolute; bottom: -.3em; left: 100%; width: .8em; height: 1.1em; color: var(--accent, #0B6E69); transform: translate(-30%, 0) rotate(35deg); transform-origin: 50% 100%; }
+@media (prefers-reduced-motion: no-preference) {
+  .sum-text.in .ink-stroke path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: ink-draw 1.4s ease-in-out .7s forwards; }
+  .sum-text.in .ink-nib { left: 0; opacity: 0; animation: ink-travel 1.4s ease-in-out .7s forwards; }
+}
+@keyframes ink-draw { to { stroke-dashoffset: 0; } }
+@keyframes ink-travel { 0% { left: 0; opacity: 1; } 100% { left: 100%; opacity: 1; } }
+@media (max-width: 640px) { .site-header .logo { font-size: 1.45rem; } }
 </style>
 </head>
 <body>
@@ -119,12 +140,13 @@
 <section class="hero">
 <div class="hero-text">
 <p class="eyebrow">A memory aid for your health appointments</p>
-<h1 class="h1">Was it two weeks, or ten days?</h1>
-<p class="lead">You'll never have to wonder again. MyScribe records your appointment on your phone, with permission, and writes the story of what happened in plain words. Ask it anything, and it shows you exactly what was said. Share it with the people you choose.</p>
+<h1 class="h1">Was it two weeks, <em>or ten days?</em></h1>
+<p class="lead">MyScribe records your appointment, with permission, and shows you exactly what was said.</p>
 <div class="actions">
 <a class="btn btn-primary" href="#waitlist">Join the waitlist</a>
 <a class="btn btn-outline" href="/how-it-works">See how it works</a>
 </div>
+<p class="soon">Coming soon to iPhone and Android</p>
 <ul class="trust trust-hero" aria-label="How we look after your appointment">
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>Never sold, never used to train AI</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>Audio deleted once it's written down</li>
@@ -169,7 +191,7 @@
 <div class="scene scene-sum">
 <p class="sum-kicker">Summary</p>
 <p class="sum-title">Dr Patel, today</p>
-<p class="sum-text">Dr Patel said she'd like you to have a <span class="sum-link">blood test in about two weeks</span>, and to <span class="sum-link">ring if the cough isn't better in ten days</span>. You also <span class="sum-link">talked about a new medicine</span>.</p>
+<p class="sum-text">Dr Patel said she'd like you to have a <span class="sum-link">blood test in <span class="ink-line">about two weeks<svg class="ink-stroke" viewBox="0 0 100 9" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 6c8-5 12-5 16-1s10 4 16 0 12-5 18-1 11 4 17 0 11-4 16-1 9 3 15 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg><svg class="ink-nib" viewBox="-14 -34 28 46" aria-hidden="true"><path d="M-9 -34h18l5 16-14 30-14-30z" fill="currentColor"/></svg></span></span>, and to <span class="sum-link">ring if the cough isn't better in ten days</span>. You also <span class="sum-link">talked about a new medicine</span>.</p>
 <p class="sum-hint">Tap the underlined words to see what was said.</p>
 <p class="sum-foot">Written by AI, so it may miss things. If anything is unclear, check the full conversation or ask your clinician.</p>
 <div class="sum-actions">
