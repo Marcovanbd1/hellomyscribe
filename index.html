@@ -12,7 +12,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Manrope:wght@700;800&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Instrument+Sans:wght@400..700&display=swap">
 <link rel="stylesheet" href="/styles.css">
 <style>
 .section-lead { max-width: 52ch; margin: -0.25rem 0 2rem; font-size: 1.15rem; }
@@ -90,8 +90,6 @@
 .snip-ico svg { width: 20px; height: 20px; }
 .ico-gone { background: var(--mist); color: var(--muted); }
 .ico-kept { background: rgba(11,110,105,.12); color: var(--accent); }
-.logo { display: inline-flex; align-items: center; gap: .45em; }
-.logo-mark { height: 1.15em; width: auto; flex: none; color: var(--accent, #0B6E69); }
 .logo-mark .lm-nib { transform-box: fill-box; transform-origin: 50% 100%; }
 @media (prefers-reduced-motion: no-preference) {
   .logo-mark .lm-line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: lm-draw 1.3s ease-in-out .2s forwards; }
@@ -102,8 +100,6 @@
 
 /* Harbour hero (Oct 2026): serif headline, logo and summary; pen underline */
 :root { --serif: "Fraunces", Georgia, "Times New Roman", serif; }
-.site-header .logo { font-family: var(--serif); font-weight: 600; font-size: 1.65rem; letter-spacing: -.01em; gap: .4em; }
-.site-header .logo-mark { height: 1.4em; }
 .hero .h1 { font-family: var(--serif); font-weight: 400; letter-spacing: -.02em; font-variation-settings: "opsz" 144; }
 .hero .h1 em { font-style: italic; color: var(--accent-dark, #08524E); }
 .soon { margin: 1rem 0 0; font-size: .92rem; color: var(--ink-soft); display: flex; align-items: center; gap: .5rem; }
@@ -119,7 +115,6 @@
 }
 @keyframes ink-draw { to { stroke-dashoffset: 0; } }
 @keyframes ink-travel { 0% { left: 0; opacity: 1; } 100% { left: 100%; opacity: 1; } }
-@media (max-width: 640px) { .site-header .logo { font-size: 1.45rem; } }
 </style>
 </head>
 <body>
