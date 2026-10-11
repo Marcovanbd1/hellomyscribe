@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trust | MyScribe</title>
+<meta name="description" content="How MyScribe looks after your conversations: where your words go, who helps us run MyScribe, what we never do, and the checks we complete before launch.">
+<meta property="og:title" content="Trust | MyScribe">
+<meta property="og:description" content="How MyScribe looks after your conversations: where your words go, who helps us run MyScribe, what we never do, and the checks we complete before launch.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0B6E69">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.section-lead { max-width: 56ch; margin: -0.25rem 0 2rem; font-size: 1.15rem; }
+.updated { font-size: .95rem; opacity: .75; margin-top: 1rem; }
+
+/* Promises */
+.promise h3 { display: flex; align-items: center; gap: .6rem; }
+.promise svg { flex: none; width: 24px; height: 24px; color: var(--accent, #0B6E69); }
+
+/* Data flow */
+.flow { list-style: none; margin: 0; padding: 0; counter-reset: flow; display: grid; gap: 0; max-width: 46rem; }
+.flow li { counter-increment: flow; position: relative; padding: 0 0 1.75rem 3.4rem; }
+.flow li::before { content: counter(flow); position: absolute; left: 0; top: 0; width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--accent, #0B6E69); color: #fff; font-family: var(--display, inherit); font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.flow li::after { content: ""; position: absolute; left: 1.05rem; top: 2.4rem; bottom: .2rem; width: 2px; background: rgba(11,110,105,.25); }
+.flow li:last-child { padding-bottom: 0; }
+.flow li:last-child::after { display: none; }
+.flow h3 { margin: .2rem 0 .35rem; }
+.flow p { margin: 0; max-width: 60ch; }
+.flow .where { display: inline-block; margin-top: .5rem; font-size: .85rem; font-weight: 600; color: var(--accent, #0B6E69); background: rgba(11,110,105,.1); border-radius: 999px; padding: .15rem .65rem; }
+.flow .gone::before { background: var(--muted, #6B7774); }
+.flow-note { max-width: 60ch; margin-top: 2rem; padding: 1rem 1.25rem; border-left: 3px solid var(--accent, #0B6E69); background: rgba(11,110,105,.06); border-radius: 0 12px 12px 0; }
+
+/* Tables */
+.table-wrap { overflow-x: auto; }
+.ttable { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.ttable th, .ttable td { text-align: left; vertical-align: top; padding: .85rem .9rem .85rem 0; border-top: 1px solid rgba(11,110,105,.2); }
+.ttable thead th { border-top: 0; font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; opacity: .7; padding-top: 0; }
+.ttable tbody tr:last-child td, .ttable tbody tr:last-child th { border-bottom: 1px solid rgba(11,110,105,.2); }
+.ttable tbody th { font-weight: 600; }
+.ttable small { display: block; opacity: .75; margin-top: .2rem; }
+@media (max-width: 680px) {
+  .ttable thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .ttable, .ttable tbody, .ttable tr, .ttable th, .ttable td { display: block; width: 100%; }
+  .ttable tr { border-top: 1px solid rgba(11,110,105,.2); padding: .9rem 0; }
+  .ttable tbody tr:last-child { border-bottom: 1px solid rgba(11,110,105,.2); }
+  .ttable th, .ttable td, .ttable tbody tr:last-child td, .ttable tbody tr:last-child th { border: 0; padding: .15rem 0; }
+  .ttable td[data-label]::before { content: attr(data-label) ": "; font-weight: 600; opacity: .7; }
+}
+
+/* Status chips */
+.status { display: inline-block; font-size: .85rem; font-weight: 600; border-radius: 999px; padding: .15rem .65rem; white-space: nowrap; }
+.status-done { background: rgba(11,110,105,.14); color: var(--accent, #0B6E69); }
+.status-launch { background: #FBEBC8; color: #7A4D0D; }
+.status-nhs { background: var(--mist, #E9EFEE); color: var(--ink, #12201E); }
+
+/* Never list */
+.never { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; max-width: 46rem; }
+.never li { display: flex; gap: .7rem; align-items: flex-start; font-size: 1.08rem; }
+.never svg { flex: none; width: 22px; height: 22px; margin-top: .15rem; color: #C8372D; }
+
+.faq { max-width: 46rem; }
+.faq details { border-top: 1px solid rgba(11,110,105,.2); padding: 1rem 0; }
+.faq details:last-child { border-bottom: 1px solid rgba(11,110,105,.2); }
+.faq summary { cursor: pointer; font-weight: 600; font-size: 1.12rem; list-style-position: outside; }
+.faq summary:focus-visible { outline: 3px solid #0B6E69; outline-offset: 3px; }
+.faq details p { margin: .75rem 0 0; max-width: 62ch; }
+
+.footer-next { margin: .25rem 0 1rem; opacity: .8; }
+.logo { display: inline-flex; align-items: center; gap: .45em; }
+.logo-mark { height: 1.15em; width: auto; flex: none; color: var(--accent, #0B6E69); }
+.logo-mark .lm-nib { transform-box: fill-box; transform-origin: 50% 100%; }
+@media (prefers-reduced-motion: no-preference) {
+  .logo-mark .lm-line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: lm-draw 1.3s ease-in-out .2s forwards; }
+  .logo-mark .lm-nib { opacity: 0; animation: lm-nib .4s ease-out 1.4s forwards; }
+}
+@keyframes lm-draw { to { stroke-dashoffset: 0; } }
+@keyframes lm-nib { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap">
+<a class="logo" href="/"><svg class="logo-mark" viewBox="4 14 162 100" fill="none" aria-hidden="true" focusable="false"><path class="lm-line" pathLength="1" d="M10 104c12-30 20-30 24-8s14 20 22-2 16-26 22-4 12 22 22 0 14-26 22-6" stroke="currentColor" stroke-width="10" stroke-linecap="round"/><g transform="translate(128 52) rotate(35)"><path class="lm-nib" d="M-9 -34h18l5 16-14 30-14-30z" fill="currentColor"/></g></svg>MyScribe</a>
+<nav class="nav" aria-label="Main">
+<a href="/how-it-works">How it works</a>
+<a href="/organisations">For organisations</a>
+<a href="/about">About</a>
+<a class="btn btn-primary" href="/#waitlist">Join the waitlist</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<section class="hero">
+<div class="hero-text">
+<p class="eyebrow">Trust</p>
+<h1 class="h1">Your conversation, looked after.</h1>
+<p class="lead">It was your appointment, so it's your record. This page sets out, in plain words, where your conversation goes, who helps us run MyScribe, what we will never do, and the checks we complete before launch.</p>
+<p class="updated">Last updated 11 October 2026. If anything here changes, we'll update this page and say what changed.</p>
+</div>
+</section>
+</div>
+
+<section class="section section-tint" aria-labelledby="promises">
+<div class="wrap">
+<h2 class="h2" id="promises">Our promises</h2>
+<div class="grid grid-2">
+<div class="feature promise"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>Never sold</h3><p class="soft">We don't sell your conversations, your summaries or anything about you. Not to advertisers, insurers, data brokers or anyone else.</p></div>
+<div class="feature promise"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 9h6v6H9z"/></svg>Never used to train AI</h3><p class="soft">Your conversations are used to write your summary and answer your questions. They are never used to train AI, by us or by anyone who helps us.</p></div>
+<div class="feature promise"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>Audio deleted once it's written down</h3><p class="soft">The recording only exists long enough to be turned into words. You keep the words, not the tape.</p></div>
+<div class="feature promise"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.6-3 2.8-4.8 5.5-4.8s4.9 1.8 5.5 4.8"/><circle cx="16.5" cy="9" r="2.6"/><path d="M15.5 14.4c2.4.1 4.3 1.7 4.9 4.6"/></svg>Shared only by you</h3><p class="soft">Nobody sees your conversation unless you share it. Not us, not your GP, not the NHS.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" aria-labelledby="journey">
+<div class="wrap">
+<h2 class="h2" id="journey">Where your conversation goes</h2>
+<p class="section-lead soft">From the moment you press record to the moment you share, step by step.</p>
+<ol class="flow">
+<li>
+<h3>You ask, then record</h3>
+<p class="soft">MyScribe opens on the question, so everyone in the room knows. While you talk, the recording stays on your phone.</p>
+<span class="where">On your phone</span>
+</li>
+<li>
+<h3>It's written down</h3>
+<p class="soft">When you press stop, the recording is sent securely to Deepgram, a speech-to-text company, to be turned into words. We've opted out of Deepgram using it to improve their models.</p>
+<span class="where">Deepgram, in the EU</span>
+</li>
+<li class="gone">
+<h3>The audio is deleted</h3>
+<p class="soft">Once the words are saved, the recording is deleted from your phone. From here on, MyScribe works only with the words.</p>
+<span class="where">Audio gone</span>
+</li>
+<li>
+<h3>The story is written</h3>
+<p class="soft">The words are sent to Google Cloud's Vertex AI to write your summary, and to find the exact words when you use Ask Your Conversation. Google doesn't use them to train its models.</p>
+<span class="where">Google Cloud, UK or EU region</span>
+</li>
+<li>
+<h3>It's kept safely</h3>
+<p class="soft">Your words and summaries are stored encrypted in your account, until you delete them. Questions you ask with Ask Your Conversation aren't saved.</p>
+<span class="where">Google Cloud, London</span>
+</li>
+<li>
+<h3>You choose who sees it</h3>
+<p class="soft">Share your summary with a daughter, a partner or whoever helps you. If you don't share it, nobody sees it.</p>
+<span class="where">Only the people you choose</span>
+</li>
+</ol>
+<p class="flow-note soft">This is how MyScribe works at launch. Behind the scenes, AI suppliers can change over time. If we ever change who helps us, or where your words are handled, we'll update this page first.</p>
+</div>
+</section>
+
+<section class="section section-tint" aria-labelledby="suppliers">
+<div class="wrap">
+<h2 class="h2" id="suppliers">Who helps us run MyScribe</h2>
+<p class="section-lead soft">MyScribe is made by Opsimath Ltd. These are the companies that handle your information on our behalf, and only on our instructions.</p>
+<div class="table-wrap">
+<table class="ttable">
+<thead><tr><th scope="col">Company</th><th scope="col">What they do</th><th scope="col">What they handle</th><th scope="col">Where</th></tr></thead>
+<tbody>
+<tr><th scope="row">Deepgram</th><td data-label="What they do">Turns your recording into words, and reads words aloud when you ask</td><td data-label="What they handle">The recording, and words to be read aloud</td><td data-label="Where">EU</td></tr>
+<tr><th scope="row">Google Cloud<small>Vertex AI</small></th><td data-label="What they do">Writes your summary and finds the exact words for Ask Your Conversation</td><td data-label="What they handle">The words of your conversation</td><td data-label="Where">UK or EU</td></tr>
+<tr><th scope="row">Google Cloud<small>Firestore</small></th><td data-label="What they do">Stores your words and summaries, encrypted</td><td data-label="What they handle">Your saved conversations</td><td data-label="Where">UK (London)</td></tr>
+<tr><th scope="row">Google Firebase<small>Authentication</small></th><td data-label="What they do">Lets you sign in</td><td data-label="What they handle">Your name, email address and how you sign in. Never your conversations</td><td data-label="Where">United States</td></tr>
+</tbody>
+</table>
+</div>
+<p class="flow-note soft">Your sign-in details are held by Google in the United States, protected by the safeguards UK data protection law requires for transfers. Your conversations and summaries stay in the UK and EU.</p>
+</div>
+</section>
+
+<section class="section" aria-labelledby="never">
+<div class="wrap">
+<h2 class="h2" id="never">What we will never do</h2>
+<ul class="never">
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Sell your information, or share it for advertising</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Use your conversations to train AI</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Keep the recording of your appointment</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Pass your conversations to the NHS, your GP, insurers, Palantir or any data platform. They only go where you send them</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Put advertising or tracking tools in the app</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Add anything to what was said. MyScribe doesn't diagnose, advise or recommend treatment</li>
+</ul>
+</div>
+</section>
+
+<section class="section section-tint" aria-labelledby="control">
+<div class="wrap">
+<h2 class="h2" id="control">You're in control</h2>
+<div class="grid grid-2">
+<div class="feature"><h3>Delete a conversation</h3><p class="soft">Delete any conversation and its summary, whenever you like. It's gone from your account and our storage.</p></div>
+<div class="feature"><h3>Delete your account</h3><p class="soft">Delete your account from the app, and everything goes with it: your conversations, your summaries and your sign-in.</p></div>
+<div class="feature"><h3>Change your mind</h3><p class="soft">You agree to MyScribe handling your health information when you sign up. You can withdraw that agreement at any time in the app.</p></div>
+<div class="feature"><h3>Ask for a copy</h3><p class="soft">You can ask us for a copy of the information we hold about you, or to correct it, by emailing <a href="mailto:hello@hellomyscribe.com">hello@hellomyscribe.com</a>.</p></div>
+</div>
+<p class="flow-note soft">MyScribe is for people aged 18 and over.</p>
+</div>
+</section>
+
+<section class="section" aria-labelledby="governance">
+<div class="wrap">
+<h2 class="h2" id="governance">Checks and standards</h2>
+<p class="section-lead soft">What's in place now, what we complete before launch, and what we complete before MyScribe is used with any NHS organisation.</p>
+<div class="table-wrap">
+<table class="ttable">
+<thead><tr><th scope="col">Check</th><th scope="col">What it means</th><th scope="col">Status</th></tr></thead>
+<tbody>
+<tr><th scope="row">Registered company</th><td data-label="What it means">Opsimath Ltd, registered in England and Wales, company number 17461745</td><td data-label="Status"><span class="status status-done">In place</span></td></tr>
+<tr><th scope="row">Clear purpose</th><td data-label="What it means">MyScribe is a memory aid. It writes down and summarises what was said, and doesn't diagnose, advise or recommend treatment, so it isn't a medical device</td><td data-label="Status"><span class="status status-done">In place</span></td></tr>
+<tr><th scope="row">Data protection impact assessment</th><td data-label="What it means">A formal check of the risks to your information, and how we reduce them</td><td data-label="Status"><span class="status status-launch">Before launch</span></td></tr>
+<tr><th scope="row">Information Commissioner's Office</th><td data-label="What it means">Registration with the UK's data protection regulator. We'll add our registration number here</td><td data-label="Status"><span class="status status-launch">Before launch</span></td></tr>
+<tr><th scope="row">Clinical safety (DCB0129)</th><td data-label="What it means">The NHS clinical risk management standard for health software</td><td data-label="Status"><span class="status status-nhs">Before NHS use</span></td></tr>
+<tr><th scope="row">DTAC</th><td data-label="What it means">The NHS Digital Technology Assessment Criteria, covering safety, data protection, security, usability and accessibility</td><td data-label="Status"><span class="status status-nhs">Before NHS use</span></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<section class="section section-tint" id="questions" aria-labelledby="trust-faq">
+<div class="wrap">
+<h2 class="h2" id="trust-faq">Good questions</h2>
+<div class="faq">
+<details>
+<summary>Can my GP or the NHS see my conversations?</summary>
+<p class="soft">No. MyScribe isn't connected to your GP record or to any NHS system. If you want your GP to see something, you can share it with them yourself.</p>
+</details>
+<details>
+<summary>Can MyScribe staff read my conversations?</summary>
+<p class="soft">We don't read your conversations. They're stored encrypted, and access is limited to keeping the service running safely, for example fixing a fault you've asked us to look at.</p>
+</details>
+<details>
+<summary>Why is AI involved at all?</summary>
+<p class="soft">AI turns the recording into words, writes the summary, and finds the exact words when you ask a question. Ask Your Conversation never writes its own answer. It only shows you what was actually said.</p>
+</details>
+<details>
+<summary>Why are my sign-in details held in the United States?</summary>
+<p class="soft">We use Google's sign-in service, which holds account details (your name, email address and how you sign in) in the United States. Your conversations and summaries are never held there.</p>
+</details>
+<details>
+<summary>What if MyScribe becomes part of another company one day?</summary>
+<p class="soft">The promises on this page go with your conversations. Your information would still only be used to give MyScribe to you, and we'd tell you before anything changed, so you could take a copy or delete it.</p>
+</details>
+<details>
+<summary>How do I raise a concern?</summary>
+<p class="soft">Email <a href="mailto:hello@hellomyscribe.com">hello@hellomyscribe.com</a> and we'll get back to you. If you're not happy with our answer, you can contact the <a href="https://ico.org.uk/make-a-complaint/">Information Commissioner's Office</a>.</p>
+</details>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<p class="footer-tag">For every conversation that matters.</p>
+<p class="footer-next">Starting with healthcare. Built for every conversation.</p>
+<div class="footer-links">
+<span>MyScribe is made by Opsimath Ltd, registered in England and Wales, company number 17461745</span>
+<a href="mailto:hello@hellomyscribe.com">hello@hellomyscribe.com</a>
+<a href="/trust">Trust</a>
+<a href="/privacy">Privacy</a>
+</div>
+</div>
+</footer>
+<script src="/site.js" defer></script>
+</body>
+</html>
