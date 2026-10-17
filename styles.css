@@ -1,13 +1,15 @@
 :root{
-  --ink:#16202A; --ink-soft:#3A4651; --muted:#55616B;
+  /* MyScribe palette (Oct 2026), shared with the app */
+  --ink:#1C2826; --ink-soft:#3B4A47; --muted:#4F5D5A;
   --accent:#0B6E69; --accent-dark:#08524E;
-  --mist:#F2F5F4; --line:#D5DCDA; --white:#FFFFFF;
-  --display:'Fraunces', Georgia, 'Times New Roman', serif;
-  --body:'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
+  --paper:#FAFAF8; --mist:#E7F4F1; --border:#CFE4DF; --line:#DCE3E0; --white:#FFFFFF;
+  --highlight:#E6F1FF; --alert:#C62F2F; --notice:#FFF0D2;
+  --display:'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  --body:'DM Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--white);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.55}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.55}
 img{max-width:100%;height:auto}
 a{color:var(--ink)}
 a:hover{color:var(--accent)}
@@ -21,7 +23,7 @@ p{margin:0}
 /* Header */
 .site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px 24px;flex-wrap:wrap;padding-top:28px;padding-bottom:28px}
 .logo{font-family:var(--display);font-weight:600;font-size:27px;letter-spacing:-0.01em;text-decoration:none;color:var(--ink);display:inline-flex;align-items:center;gap:.4em}
-.logo-mark{height:1.4em;width:auto;flex:none;color:var(--accent)}
+.logo-mark{height:1.25em;width:auto;flex:none;color:var(--accent)}
 .nav{display:flex;gap:12px 28px;align-items:center;flex-wrap:wrap;font-size:17px}
 .nav a{text-decoration:none}
 .nav a[aria-current="page"]{text-decoration:underline;text-underline-offset:6px;font-weight:600}
@@ -36,7 +38,7 @@ p{margin:0}
 
 /* Type helpers */
 .eyebrow{font-weight:600;color:var(--accent);font-size:17px;margin-bottom:20px}
-.h1{font-weight:400;font-size:clamp(40px,5.8vw,62px);line-height:1.05;letter-spacing:-0.02em;margin-bottom:24px;font-variation-settings:'opsz' 144;text-wrap:balance}
+.h1{font-weight:600;font-size:clamp(40px,5.8vw,62px);line-height:1.05;letter-spacing:-0.025em;margin-bottom:24px;text-wrap:balance}
 .h1 em{font-style:italic;color:var(--accent-dark)}
 .h2{font-weight:600;font-size:clamp(30px,4vw,42px);margin-bottom:32px;text-wrap:balance}
 .lead{font-size:21px;color:var(--ink-soft);max-width:46ch}
@@ -54,17 +56,18 @@ p{margin:0}
 .hero .lead{max-width:34ch;margin-bottom:36px}
 .actions{display:flex;gap:16px;flex-wrap:wrap}
 .hero-phone{flex:0 1 320px;display:flex;justify-content:center;margin:0 auto}
-.phone{width:300px;height:600px;border:10px solid var(--ink);border-radius:44px;padding:14px 20px 24px;display:flex;flex-direction:column;gap:16px;background:#F4F7F6}
+.phone{width:300px;height:600px;border:10px solid var(--ink);border-radius:44px;padding:14px 20px 24px;display:flex;flex-direction:column;gap:16px;background:var(--paper)}
 .phone-status{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;padding:0 6px}
 .phone-battery{width:22px;height:11px;border:1.5px solid var(--ink);border-radius:3px;position:relative}
 .phone-battery::after{content:"";position:absolute;inset:1.5px 5px 1.5px 1.5px;background:var(--ink);border-radius:1px}
 .phone-app{font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-0.02em;margin-top:4px}
 .phone-card{background:#fff;border-radius:18px;padding:16px 18px}
 .phone-card small{display:block;font-size:13px;font-weight:600;color:var(--accent);margin-bottom:6px}
-.phone-q{font-family:var(--display);font-weight:400;font-size:19px;line-height:1.25}
+.phone-q{font-family:var(--display);font-weight:600;font-size:19px;line-height:1.2;letter-spacing:-0.01em}
+.phone-q2{font-size:15px;color:var(--muted);margin-top:6px}
 .phone-rec{display:flex;flex-direction:column;align-items:center;gap:10px;margin:6px 0}
 .rec-btn{width:84px;height:84px;border-radius:50%;border:4px solid var(--ink);display:flex;align-items:center;justify-content:center;background:#fff}
-.rec-dot{width:58px;height:58px;border-radius:50%;background:#C8372D}
+.rec-dot{width:58px;height:58px;border-radius:50%;background:var(--alert)}
 .rec-label{font-weight:600;font-size:15px}
 .phone-list{margin-top:auto}
 .phone-list-title{font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px}
@@ -87,7 +90,7 @@ p{margin:0}
 .row h2{font-weight:700;font-size:28px}
 
 /* Statement */
-.statement{font-family:var(--display);font-weight:400;font-size:clamp(30px,4.2vw,44px);line-height:1.2;letter-spacing:-0.02em;max-width:22ch}
+.statement{font-family:var(--display);font-weight:500;font-size:clamp(30px,4.2vw,44px);line-height:1.2;letter-spacing:-0.02em;max-width:22ch}
 
 /* Panels */
 .doors{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
@@ -126,7 +129,7 @@ textarea{min-height:140px;resize:vertical}
 /* Footer */
 .site-footer{border-top:1px solid var(--line)}
 .site-footer .wrap{display:flex;justify-content:space-between;gap:16px 24px;flex-wrap:wrap;padding-top:40px;padding-bottom:40px;font-size:15px;color:var(--ink-soft)}
-.footer-tag{font-family:var(--display);font-style:italic;font-weight:400;color:var(--ink);font-size:18px}
+.footer-tag{font-family:var(--display);font-weight:600;color:var(--ink);font-size:18px}
 .footer-links{display:flex;gap:8px 20px;flex-wrap:wrap}
 
 /* Simple pages */
@@ -153,10 +156,10 @@ textarea{min-height:140px;resize:vertical}
 .scene.is-on{opacity:1;transform:none}
 .rec-btn{transition:transform .25s ease}
 .press .scene-ask .rec-btn{transform:scale(.9)}
-.press .scene-ask .rec-dot{box-shadow:0 0 0 14px rgba(200,55,45,.15)}
+.press .scene-ask .rec-dot{box-shadow:0 0 0 14px rgba(198,47,47,.15)}
 .rec-dot{transition:box-shadow .3s ease}
 .rec-status{font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px}
-.rec-live{width:10px;height:10px;border-radius:50%;background:#C8372D;animation:blink 1.2s ease-in-out infinite}
+.rec-live{width:10px;height:10px;border-radius:50%;background:var(--alert);animation:blink 1.2s ease-in-out infinite}
 .rec-time{font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400}
 .wave{display:flex;align-items:center;justify-content:center;gap:4px;height:56px}
 .wave span{width:4px;height:12px;border-radius:2px;background:var(--accent);opacity:.85}
@@ -166,7 +169,7 @@ textarea{min-height:140px;resize:vertical}
 .words span{opacity:0;transform:translateY(6px);filter:blur(4px);transition:opacity .7s ease,transform .7s ease,filter .7s ease}
 .words span.in{opacity:1;transform:none;filter:none}
 .words.gather span{opacity:0;transform:scale(.6) translateY(40px);filter:blur(8px);transition:all .8s cubic-bezier(.6,0,.4,1)}
-.stop-sq{width:30px;height:30px;border-radius:7px;background:#C8372D}
+.stop-sq{width:30px;height:30px;border-radius:7px;background:var(--alert)}
 .scene-rec .phone-rec{margin-bottom:4px}
 .sum-kicker{font-size:13px;font-weight:600;color:var(--accent)}
 .sum-title{font-family:var(--display);font-weight:600;font-size:20px;letter-spacing:-0.02em;margin-top:-10px}
@@ -198,12 +201,14 @@ textarea{min-height:140px;resize:vertical}
 .wrap.grid-2{max-width:944px;margin-left:0;margin-right:auto}
 .wrap.grid-2{margin-left:max(0px,calc((100% - 1120px)/2))}
 @media (max-width:720px){.grid-2{grid-template-columns:1fr}}
-/* Logo: the writing line draws, then the nib appears */
-.logo-mark .lm-nib{transform-box:fill-box;transform-origin:50% 100%}
+/* Logo: the pen writes two lines, then rests (still logo when reduce motion is on) */
+.logo-mark .lm-nib{transform-box:fill-box;transform-origin:0% 100%}
 @media (prefers-reduced-motion:no-preference){
-  .logo-mark .lm-line{stroke-dasharray:1;stroke-dashoffset:1;animation:lm-draw 1.3s ease-in-out .2s forwards}
-  .logo-mark .lm-nib{opacity:0;animation:lm-nib .4s ease-out 1.4s forwards}
+  .logo-mark .lm-line{stroke-dasharray:1;stroke-dashoffset:1;animation:lm-draw .55s ease-in-out forwards}
+  .logo-mark .lm-l1{animation-delay:.2s}
+  .logo-mark .lm-l2{animation-delay:.85s;animation-duration:.4s}
+  .logo-mark .lm-nib{opacity:0;animation:lm-nib .35s ease-out 1.2s forwards}
 }
 @keyframes lm-draw{to{stroke-dashoffset:0}}
-@keyframes lm-nib{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+@keyframes lm-nib{from{opacity:0;transform:translate(3px,-3px) scale(.85)}to{opacity:1;transform:none}}
 .footer-next{margin:.25rem 0 1rem;opacity:.8}
