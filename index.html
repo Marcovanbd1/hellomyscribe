@@ -109,6 +109,30 @@
 }
 @keyframes ink-draw { to { stroke-dashoffset: 0; } }
 @keyframes ink-travel { 0% { left: 0; opacity: 1; } 100% { left: 100%; opacity: 1; } }
+
+/* Draft home (Oct 2026): fewer sections, one big family moment */
+.trust-row { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; border-top: 0; padding-top: 0; margin-top: 1.6rem; max-width: none; }
+.trust-row li { font-size: .95rem; font-weight: 600; color: var(--ink-soft); }
+.then { margin-top: 64px; max-width: none; }
+.family { display: flex; gap: 48px 72px; align-items: center; flex-wrap: wrap; }
+.family-text { flex: 1 1 380px; }
+.family-text .h2 { line-height: 1.12; margin-bottom: 20px; }
+.family-text .lead { margin-bottom: 18px; }
+.family-note { font-weight: 600; }
+.chat-phone { flex: 0 1 340px; margin: 0 auto; width: 320px; max-width: 100%; border: 10px solid var(--ink); border-radius: 44px; background: #EEF1F0; overflow: hidden; }
+.chat-top { display: flex; align-items: center; gap: 10px; background: #fff; padding: 22px 18px 12px; font-size: 14px; line-height: 1.2; border-bottom: 1px solid var(--line); }
+.chat-top small { color: var(--muted); }
+.chat-av { width: 34px; height: 34px; border-radius: 50%; background: var(--mist); color: var(--accent); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.chat-body { padding: 16px 14px 22px; display: flex; flex-direction: column; gap: 10px; font-size: 13.5px; line-height: 1.42; }
+.cb { border-radius: 16px; padding: 11px 13px; max-width: 92%; display: flex; flex-direction: column; gap: 7px; }
+.cb-in { background: #fff; align-self: flex-start; border-bottom-left-radius: 4px; }
+.cb-out { background: var(--accent); color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
+.cb-foot { color: var(--muted); font-size: 12px; }
+.cb-ps { border-top: 1px solid var(--line); padding-top: 7px; font-size: 12.5px; color: var(--ink-soft); }
+.cb-ps span { color: var(--accent); text-decoration: underline; }
+.waitlist { max-width: 640px; margin: 0 auto; text-align: left; }
+.org-line { max-width: 640px; margin: 24px auto 0; color: var(--ink-soft); }
+.org-line a { font-weight: 600; }
 </style>
 </head>
 <body>
@@ -136,7 +160,7 @@
 <a class="btn btn-outline" href="/how-it-works">See how it works</a>
 </div>
 <p class="soon">Coming soon to iPhone and Android</p>
-<ul class="trust trust-hero" aria-label="How we look after your appointment">
+<ul class="trust trust-row" aria-label="How we look after your appointment">
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>Never sold, never used to train AI</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>Audio deleted once it's written down</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.6-3 2.8-4.8 5.5-4.8s4.9 1.8 5.5 4.8"/><circle cx="16.5" cy="9" r="2.6"/><path d="M15.5 14.4c2.4.1 4.3 1.7 4.9 4.6"/></svg>Shared only with people you choose</li>
@@ -230,13 +254,7 @@
 </div></div>
 <h3>3. Remember</h3><p class="soft">Get the story of your appointment in plain words. Read it, have it read aloud, ask it anything, or share it with family.</p></li>
 </ol>
-</div>
-</section>
-
-<section class="section section-tint">
-<div class="wrap">
-<h2 class="h2">The words, not a guess</h2>
-<div class="grid grid-2">
+<div class="grid grid-2 then">
 <div class="feature"><div class="snip" aria-hidden="true">
 <p class="snip-sum">…to have a <span class="sum-link is-active">blood test in about two weeks</span>, and…</p>
 <div class="snip-quote"><small>Exact words, 06:12</small>“…and I'd like a blood test in about two weeks…”</div>
@@ -245,42 +263,26 @@
 <p class="bub bub-you">Was it one tablet or two?</p>
 <p class="bub bub-ans"><small>Dr Patel, 04:38</small>“…one each morning, with breakfast…”<span class="bub-play"><span class="play"></span>Read aloud</span></p>
 </div><h3>Ask Your Conversation</h3><p class="soft">“Was it one tablet or two?” Ask, and MyScribe finds the moment it was said, in the exact words that were said, to read or have read aloud.</p></div>
-<div class="feature"><div class="snip" aria-hidden="true">
-<p class="snip-line">“…come back to us if it's <mark class="flag">still swollen</mark> by Friday…”</p>
-<p class="flag-note"><span class="flag-icon">!</span>Not heard clearly. Check this part.</p>
-</div><h3>Unclear words are flagged</h3><p class="soft">If something wasn't heard clearly, MyScribe marks it, so you know what to check.</p></div>
-<div class="feature"><div class="snip snip-list" aria-hidden="true">
-<p class="snip-row"><span class="snip-ico ico-gone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></span><span><strong>Audio</strong><br>Deleted once written down</span></p>
-<p class="snip-row"><span class="snip-ico ico-kept"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span><strong>Words and summary</strong><br>Yours to keep</span></p>
-</div><h3>No tape left behind</h3><p class="soft">The audio is deleted once it's been written down. You keep the words, not the recording.</p></div>
 </div>
 </div>
 </section>
 
-<section class="section" id="family">
-<div class="wrap">
+<section class="section section-tint" id="family">
+<div class="wrap family">
+<div class="family-text">
 <h2 class="h2">For the people who couldn't be in the room</h2>
-<p class="section-lead soft">Not everyone can make it to every appointment. Share your summary with a daughter, a partner, or whoever helps you look after your health, so they know what was actually said.</p>
-<div class="grid grid-2">
-<div class="feature"><h3>The summary, and the real words behind it</h3><p class="soft">No more passing on half-remembered details. They see the same summary you do, with the full conversation there to check.</p></div>
-<div class="feature"><h3>You choose who sees it</h3><p class="soft">Nothing is shared unless you share it. Your appointment stays yours.</p></div>
-<div class="feature"><h3>Help with the details</h3><p class="soft">Sorting tablets on a Sunday, or booking the follow-up. Whoever is helping can check the plan with you.</p></div>
-<div class="feature"><h3>A thoughtful thing to set up</h3><p class="soft">Helping a parent with their appointments? Set MyScribe up on their phone and keep each other in the loop.</p></div>
+<p class="lead">Share the summary with whoever helps you look after your health, so they know what was actually said. Not what was half remembered on the way home.</p>
+<p class="soft family-note">Nothing is shared unless you share it.</p>
 </div>
-</div>
-</section>
-
-<section class="section section-tint" id="clinicians">
-<div class="wrap">
-<h2 class="h2">For clinicians</h2>
-<p class="section-lead soft">Patients already record appointments, sometimes without saying so. In one UK survey, one in seven had secretly recorded an appointment. MyScribe makes it open, polite and faithful to what you said.</p>
-<div class="grid grid-2">
-<div class="feature"><h3>Nothing added</h3><p class="soft">MyScribe writes down what was said and summarises it in plain words. It doesn't diagnose, advise or add anything of its own. Medicine names and doses are left out of the summary, so patients check your exact words.</p></div>
-<div class="feature"><h3>Asked out loud, every time</h3><p class="soft">The app opens on the consent question, so recording is never a surprise.</p></div>
-<div class="feature"><h3>Unclear words are flagged</h3><p class="soft">If something wasn't heard clearly, it's marked for the patient to check, not guessed.</p></div>
-<div class="feature"><h3>Fewer repeat calls</h3><p class="soft">Patients who remember the plan don't need to ring reception to ask what the doctor said.</p></div>
-</div>
-<a class="more-link" href="/organisations">For practices, PCNs and ICBs</a>
+<div class="chat-phone" aria-hidden="true">
+<div class="chat-top"><span class="chat-av">M</span><span><strong>Mum</strong><br><small>today, 11:42</small></span></div>
+<div class="chat-body">
+<div class="cb cb-in"><p><strong>Summary of a conversation on Fri 17 Oct</strong></p>
+<p>Dr Patel said she'd like you to have a blood test in about two weeks, and to ring the surgery if the cough isn't better in ten days. You also talked about a new medicine.</p>
+<p class="cb-foot">If anything is unclear, check with the person who recorded it or the clinician.</p>
+<p class="cb-ps">Want this after your own appointments? MyScribe is free to download at <span>hellomyscribe.com/shared</span></p></div>
+<div class="cb cb-out"><p>Thanks Mum. I'll ring on Thursday to check the blood test is booked.</p></div>
+</div></div>
 </div>
 </section>
 
@@ -288,10 +290,6 @@
 <div class="wrap">
 <h2 class="h2">Good questions</h2>
 <div class="faq">
-<details>
-<summary>Is MyScribe a medical app?</summary>
-<p class="soft">No. MyScribe helps people remember and share what was said in their appointments. Like a notebook or a voice recorder, it helps you remember. It doesn't diagnose, give medical advice or recommend treatment, and it doesn't replace your clinician.</p>
-</details>
 <details>
 <summary>Am I allowed to record my appointment?</summary>
 <p class="soft">Yes. In the UK you don't need your doctor's permission to record your own appointment, because it's your own personal information. The Medical Defence Union, which advises doctors, says the same. MyScribe still opens on the question, because asking openly is the kind thing to do.</p>
@@ -305,18 +303,11 @@
 <p class="soft">The audio is deleted once it has been written down. You keep the words and your summary, not the recording.</p>
 </details>
 <details>
-<summary>Is the summary always right?</summary>
-<p class="soft">The summary is written by AI, so it may miss things. That's why the full conversation is always there to check, and why the summary leaves out medicine names and doses. If anything is unclear, check the full conversation or ask your clinician.</p>
-</details>
-<details>
-<summary>Who can see my appointment?</summary>
-<p class="soft">Only you, and the people you choose to share it with.</p>
-</details>
-<details>
 <summary>How much will it cost?</summary>
 <p class="soft">Free to download. You only pay for the time you record, with no subscription. We'll share pricing at launch.</p>
 </details>
 </div>
+<a class="more-link" href="/trust">How we look after your conversation</a>
 </div>
 </section>
 
@@ -325,10 +316,10 @@
 </section>
 
 <section class="section" id="waitlist">
-<div class="wrap doors">
-<div class="panel panel-tint">
-<h2>For you</h2>
-<p class="soft">MyScribe launches soon. Leave your email and we'll tell you when it's ready.</p>
+<div class="wrap">
+<div class="panel panel-tint waitlist">
+<h2>Be first to try MyScribe</h2>
+<p class="soft">Coming soon to iPhone and Android. Leave your email and we'll tell you the day it's ready.</p>
 <form class="form" name="waitlist" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
 <input type="hidden" name="form-name" value="waitlist">
 <p class="hidden"><label>Leave this empty <input name="bot-field"></label></p>
@@ -339,18 +330,8 @@
 </div>
 <p class="form-note">We'll only use your email to tell you about MyScribe. <a href="/privacy">Privacy</a></p>
 </form>
-<ul class="trust" aria-label="How we look after your appointment">
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>Never sold, never used to train AI</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>Audio deleted once it's written down</li>
-<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.6-3 2.8-4.8 5.5-4.8s4.9 1.8 5.5 4.8"/><circle cx="16.5" cy="9" r="2.6"/><path d="M15.5 14.4c2.4.1 4.3 1.7 4.9 4.6"/></svg>Shared only with people you choose</li>
-</ul>
-<a class="trust-more" href="/trust">How we look after your conversation</a>
 </div>
-<div class="panel panel-line">
-<h2>For organisations</h2>
-<p class="soft">GP practices, PCNs, ICBs and partners. Find out how MyScribe helps patients remember, and cuts repeat contact.</p>
-<a class="btn btn-outline" href="/organisations">Talk to us</a>
-</div>
+<p class="org-line">Work in a GP practice, PCN or ICB? <a href="/organisations">See MyScribe for organisations</a></p>
 </div>
 </section>
 </main>
