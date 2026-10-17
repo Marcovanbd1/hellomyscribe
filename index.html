@@ -12,7 +12,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Instrument+Sans:wght@400..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..800&display=swap">
 <link rel="stylesheet" href="/styles.css">
 <style>
 .section-lead { max-width: 52ch; margin: -0.25rem 0 2rem; font-size: 1.15rem; }
@@ -50,15 +50,16 @@
 }
 .steps .step { border-top: 0; padding-top: 0; }
 .shot { background: var(--mist); border-radius: 20px; height: 282px; padding: 28px 24px 0; display: flex; justify-content: center; overflow: hidden; margin-bottom: 24px; }
-.mini { width: 220px; border: 8px solid var(--ink); border-bottom: 0; border-radius: 34px 34px 0 0; background: #F4F7F6; padding: 18px 16px 0; display: flex; flex-direction: column; gap: 12px; font-size: 13px; line-height: 1.35; }
+.mini { width: 220px; border: 8px solid var(--ink); border-bottom: 0; border-radius: 34px 34px 0 0; background: var(--paper); padding: 18px 16px 0; display: flex; flex-direction: column; gap: 12px; font-size: 13px; line-height: 1.35; }
 .mini-app { font-family: var(--display); font-weight: 800; font-size: 15px; letter-spacing: -0.02em; }
 .mini-card { background: #fff; border-radius: 14px; padding: 12px 14px; }
 .mini-card small { display: block; font-size: 11px; font-weight: 600; color: var(--accent); margin-bottom: 4px; }
+.mini-q2 { display: block; font-size: 12px; color: var(--muted); margin-top: 4px; }
 .mini-card p { font-family: var(--display); font-weight: 700; font-size: 14.5px; line-height: 1.25; }
 .mini-rec { display: flex; flex-direction: column; align-items: center; gap: 6px; font-weight: 600; font-size: 12px; }
 .mini-btn { width: 56px; height: 56px; border-radius: 50%; border: 3px solid var(--ink); background: #fff; display: flex; align-items: center; justify-content: center; }
-.mini-dot { width: 38px; height: 38px; border-radius: 50%; background: #C8372D; }
-.mini-stop { width: 20px; height: 20px; border-radius: 5px; background: #C8372D; }
+.mini-dot { width: 38px; height: 38px; border-radius: 50%; background: var(--alert); }
+.mini-stop { width: 20px; height: 20px; border-radius: 5px; background: var(--alert); }
 .mini-status { font-size: 12.5px; font-weight: 600; display: flex; align-items: center; gap: 7px; margin-top: 4px; }
 .mini-wave { display: flex; align-items: center; justify-content: center; gap: 3px; height: 44px; }
 .mini-wave span { width: 3px; border-radius: 2px; background: var(--accent); opacity: .85; height: 10px; }
@@ -73,7 +74,7 @@
 .snip { background: #fff; border-radius: 16px; padding: 18px 20px; margin-bottom: 20px; min-height: 172px; font-size: 15px; line-height: 1.45; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
 .snip small { display: block; font-size: 12px; font-weight: 600; color: var(--accent); margin-bottom: 2px; }
 .snip-sum { color: var(--ink-soft); }
-.sum-link.is-active { background: rgba(11,110,105,.12); border-radius: 4px; padding: 0 2px; }
+.sum-link.is-active { background: var(--highlight); border-radius: 4px; padding: 0 2px; }
 .snip-quote { border-left: 3px solid var(--accent); padding: 2px 0 2px 12px; color: var(--ink); }
 .bub { border-radius: 14px; padding: 9px 13px; max-width: 88%; }
 .bub-you { align-self: flex-end; background: var(--accent); color: #fff; border-bottom-right-radius: 4px; font-weight: 600; }
@@ -81,7 +82,7 @@
 .bub-play { display: flex; align-items: center; gap: 6px; margin-top: 6px; font-size: 12.5px; font-weight: 600; color: var(--accent); }
 .bub-play .play { border-left: 7px solid var(--accent); border-top-width: 5px; border-bottom-width: 5px; }
 .snip-line { color: var(--ink-soft); }
-.flag { background: #FBEBC8; color: var(--ink); border-bottom: 2px dashed #A86A12; padding: 0 2px; border-radius: 3px; }
+.flag { background: var(--notice); color: var(--ink); border-bottom: 2px dashed #A86A12; padding: 0 2px; border-radius: 3px; }
 .flag-note { display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: #7A4D0D; }
 .flag-icon { width: 20px; height: 20px; flex: none; border-radius: 50%; background: #A86A12; color: #fff; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
 .snip-row { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--ink-soft); }
@@ -90,17 +91,10 @@
 .snip-ico svg { width: 20px; height: 20px; }
 .ico-gone { background: var(--mist); color: var(--muted); }
 .ico-kept { background: rgba(11,110,105,.12); color: var(--accent); }
-.logo-mark .lm-nib { transform-box: fill-box; transform-origin: 50% 100%; }
-@media (prefers-reduced-motion: no-preference) {
-  .logo-mark .lm-line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: lm-draw 1.3s ease-in-out .2s forwards; }
-  .logo-mark .lm-nib { opacity: 0; animation: lm-nib .4s ease-out 1.4s forwards; }
-}
-@keyframes lm-draw { to { stroke-dashoffset: 0; } }
-@keyframes lm-nib { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: none; } }
 
-/* Harbour hero (Oct 2026): serif headline, logo and summary; pen underline */
-:root { --serif: "Fraunces", Georgia, "Times New Roman", serif; }
-.hero .h1 { font-family: var(--serif); font-weight: 400; letter-spacing: -.02em; font-variation-settings: "opsz" 144; }
+/* Hero (Oct 2026): DM Sans headline, logo and summary; pen underline */
+:root { --serif: "DM Sans", "Helvetica Neue", Arial, sans-serif; }
+.hero .h1 { font-family: var(--serif); font-weight: 600; letter-spacing: -.025em; }
 .hero .h1 em { font-style: italic; color: var(--accent-dark, #08524E); }
 .soon { margin: 1rem 0 0; font-size: .92rem; color: var(--ink-soft); display: flex; align-items: center; gap: .5rem; }
 .soon::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent, #0B6E69); flex: none; }
@@ -108,7 +102,7 @@
 .scene-sum .sum-title, .phone-app { font-weight: 600; letter-spacing: -.01em; }
 .ink-line { position: relative; white-space: nowrap; }
 .ink-line .ink-stroke { position: absolute; left: 0; right: 0; bottom: -.45em; width: 100%; height: .55em; overflow: visible; color: var(--accent, #0B6E69); }
-.ink-line .ink-nib { position: absolute; bottom: -.3em; left: 100%; width: .8em; height: 1.1em; color: var(--accent, #0B6E69); transform: translate(-30%, 0) rotate(35deg); transform-origin: 50% 100%; }
+.ink-line .ink-nib { position: absolute; bottom: -.3em; left: 100%; width: .62em; height: 1.1em; color: var(--accent, #0B6E69); transform: translate(-50%, 0) rotate(45deg); transform-origin: 50% 100%; }
 @media (prefers-reduced-motion: no-preference) {
   .sum-text.in .ink-stroke path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: ink-draw 1.4s ease-in-out .7s forwards; }
   .sum-text.in .ink-nib { left: 0; opacity: 0; animation: ink-travel 1.4s ease-in-out .7s forwards; }
@@ -121,7 +115,7 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
 <div class="wrap">
-<a class="logo" href="/"><svg class="logo-mark" viewBox="4 14 162 100" fill="none" aria-hidden="true" focusable="false"><path class="lm-line" pathLength="1" d="M10 104c12-30 20-30 24-8s14 20 22-2 16-26 22-4 12 22 22 0 14-26 22-6" stroke="currentColor" stroke-width="10" stroke-linecap="round"/><g transform="translate(128 52) rotate(35)"><path class="lm-nib" d="M-9 -34h18l5 16-14 30-14-30z" fill="currentColor"/></g></svg>MyScribe</a>
+<a class="logo" href="/"><svg class="logo-mark" viewBox="8 12 50 33" fill="none" aria-hidden="true" focusable="false"><defs><mask id="lm-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64"><rect width="64" height="64" fill="#fff"/><g transform="translate(32.5 40) rotate(-45) scale(1.75)"><path d="M2.6 0H8.4" stroke="#000" stroke-width="1.1" stroke-linecap="round"/><circle cx="9.4" cy="0" r="1.05" fill="#000"/></g></mask></defs><path class="lm-line lm-l1" pathLength="1" d="M13 23H36" stroke="currentColor" stroke-width="6.4" stroke-linecap="round"/><path class="lm-line lm-l2" pathLength="1" d="M13 40H29" stroke="currentColor" stroke-width="6.4" stroke-linecap="round"/><g class="lm-nib" mask="url(#lm-cut)"><path transform="translate(32.5 40) rotate(-45) scale(1.75)" d="M0 0L13-4.3Q17 0 13 4.3Z" fill="currentColor"/></g></svg>MyScribe</a>
 <nav class="nav" aria-label="Main">
 <a href="/how-it-works">How it works</a>
 <a href="/organisations">For organisations</a>
@@ -157,7 +151,8 @@
 <div class="scene scene-ask is-on">
 <div class="phone-card">
 <small>Ask first</small>
-<p class="phone-q">“Do you mind if I record this? Just to help me remember.”</p>
+<p class="phone-q">Do you mind if I record this?</p>
+<p class="phone-q2">Just to help me remember.</p>
 </div>
 <div class="phone-rec">
 <span class="rec-btn"><span class="rec-dot"></span></span>
@@ -186,7 +181,7 @@
 <div class="scene scene-sum">
 <p class="sum-kicker">Summary</p>
 <p class="sum-title">Dr Patel, today</p>
-<p class="sum-text">Dr Patel said she'd like you to have a <span class="sum-link">blood test in <span class="ink-line">about two weeks<svg class="ink-stroke" viewBox="0 0 100 9" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 6c8-5 12-5 16-1s10 4 16 0 12-5 18-1 11 4 17 0 11-4 16-1 9 3 15 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg><svg class="ink-nib" viewBox="-14 -34 28 46" aria-hidden="true"><path d="M-9 -34h18l5 16-14 30-14-30z" fill="currentColor"/></svg></span></span>, and to <span class="sum-link">ring if the cough isn't better in ten days</span>. You also <span class="sum-link">talked about a new medicine</span>.</p>
+<p class="sum-text">Dr Patel said she'd like you to have a <span class="sum-link">blood test in <span class="ink-line">about two weeks<svg class="ink-stroke" viewBox="0 0 100 9" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 6c8-5 12-5 16-1s10 4 16 0 12-5 18-1 11 4 17 0 11-4 16-1 9 3 15 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg><svg class="ink-nib" viewBox="-5 -17.5 10 18" aria-hidden="true"><g transform="rotate(-90)"><path d="M0 0L13-4.3Q17 0 13 4.3Z" fill="currentColor"/><path d="M2.6 0H8.4" stroke="var(--paper,#FAFAF8)" stroke-width="1.1" stroke-linecap="round"/><circle cx="9.4" cy="0" r="1.05" fill="var(--paper,#FAFAF8)"/></g></svg></span></span>, and to <span class="sum-link">ring if the cough isn't better in ten days</span>. You also <span class="sum-link">talked about a new medicine</span>.</p>
 <p class="sum-hint">Tap the underlined words to see what was said.</p>
 <p class="sum-foot">Written by AI, so it may miss things. If anything is unclear, check the full conversation or ask your clinician.</p>
 <div class="sum-actions">
@@ -214,7 +209,7 @@
 <li class="step">
 <div class="shot" aria-hidden="true"><div class="mini">
 <p class="mini-app">MyScribe</p>
-<div class="mini-card"><small>Ask first</small><p>“Do you mind if I record this? Just to help me remember.”</p></div>
+<div class="mini-card"><small>Ask first</small><p>Do you mind if I record this?</p><span class="mini-q2">Just to help me remember.</span></div>
 <div class="mini-rec"><span class="mini-btn"><span class="mini-dot"></span></span><span>They're happy for me to record</span></div>
 </div></div>
 <h3>1. Ask</h3><p class="soft">MyScribe opens on the question. Ask it out loud, so everyone in the room knows.</p></li>
