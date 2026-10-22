@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You're in | MyScribe</title>
+<meta name="description" content="You're on the list for MyScribe. Launching 1 December.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1E1F22">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..800&display=swap">
+<link rel="stylesheet" href="/styles.css">
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-2xMqHdNtrrsRjwaFG2nD4.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap">
+<a class="logo" href="/"><svg class="logo-mark" viewBox="8 12 50 33" fill="none" aria-hidden="true" focusable="false"><defs><mask id="lm-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64"><rect width="64" height="64" fill="#fff"/><g transform="translate(32.5 40) rotate(-45) scale(1.75)"><path d="M2.6 0H8.4" stroke="#000" stroke-width="1.1" stroke-linecap="round"/><circle cx="9.4" cy="0" r="1.05" fill="#000"/></g></mask></defs><path class="lm-line lm-l1" pathLength="1" d="M13 23H36" stroke="currentColor" stroke-width="6.4" stroke-linecap="round"/><path class="lm-line lm-l2" pathLength="1" d="M13 40H29" stroke="currentColor" stroke-width="6.4" stroke-linecap="round"/><g class="lm-nib" mask="url(#lm-cut)"><path transform="translate(32.5 40) rotate(-45) scale(1.75)" d="M0 0L13-4.3Q17 0 13 4.3Z" fill="currentColor"/></g></svg>MyScribe</a>
+<nav class="nav" aria-label="Main">
+<a href="/how-it-works">How it works</a>
+<a href="/organisations">For organisations</a>
+<a href="/about">About</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<div class="wrap page-intro" style="padding-bottom:120px">
+<p class="waitlist-count">Launching 1 December</p>
+<h1 class="h1">You're in.</h1>
+<p class="lead" style="margin-bottom:40px">Thank you for being one of the first. We'll email your invite before launch. Your first conversation is free.</p>
+<h2 style="font-size:26px;margin-bottom:10px">Know someone who'd want this?</h2>
+<p class="soft" style="max-width:52ch;margin-bottom:16px">Someone with appointments coming up, or someone who helps look after a person who does. Pass it on before the 108 places go.</p>
+<div class="share-box">
+<span class="share-link">hellomyscribe.com</span>
+<button class="btn btn-primary" type="button" id="share-btn">Share the link</button>
+</div>
+<p class="soft" id="share-done" role="status" style="margin-top:12px;min-height:1.5em"></p>
+<p style="margin-top:40px"><a class="btn btn-outline" href="/">Back to home</a></p>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<p class="footer-tag">For every conversation that matters.</p>
+<div class="footer-links">
+<span>MyScribe is made by Opsimath Ltd, registered in England and Wales, company number 17461745</span>
+<a href="mailto:hello@hellomyscribe.com">hello@hellomyscribe.com</a>
+<a href="/privacy">Privacy</a>
+</div>
+</div>
+</footer>
+<script>
+(function(){
+  var btn = document.getElementById('share-btn');
+  var done = document.getElementById('share-done');
+  var url = 'https://www.hellomyscribe.com';
+  var text = "I've joined the first 108 people to use MyScribe. It writes down what was said at your appointment, so you can go back to it.";
+  btn.addEventListener('click', function(){
+    if (navigator.share) {
+      navigator.share({ title: 'MyScribe', text: text, url: url }).catch(function(){});
+    } else if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function(){ done.textContent = 'Link copied. Paste it anywhere.'; });
+    } else {
+      done.textContent = 'Copy this link: ' + url;
+    }
+  });
+})();
+</script>
+<script src="/site.js" defer></script>
+</body>
+</html>
