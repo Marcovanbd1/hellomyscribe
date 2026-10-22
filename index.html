@@ -8,7 +8,7 @@
 <meta property="og:title" content="MyScribe | For every conversation that matters">
 <meta property="og:description" content="MyScribe records your appointment on your phone, with permission, and writes the story of what happened in plain words. Ask it anything, and it takes you to the moment it was said.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#0B6E69">
+<meta name="theme-color" content="#1E1F22">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,21 +22,21 @@
 </script>
 <style>
 .section-lead { max-width: 52ch; margin: -0.25rem 0 2rem; font-size: 1.15rem; }
-.trust { list-style: none; margin: 1.25rem 0 0; padding: 1rem 0 0; border-top: 1px solid rgba(11,110,105,.2); display: grid; gap: .65rem; }
+.trust { list-style: none; margin: 1.25rem 0 0; padding: 1rem 0 0; border-top: 1px solid var(--line); display: grid; gap: .65rem; }
 .trust li { display: flex; align-items: center; gap: .6rem; font-size: .98rem; }
-.trust svg { flex: none; width: 22px; height: 22px; color: #0B6E69; }
+.trust svg { flex: none; width: 22px; height: 22px; color: var(--ink); }
 .faq { max-width: 46rem; }
-.faq details { border-top: 1px solid rgba(11,110,105,.2); padding: 1rem 0; }
-.faq details:last-child { border-bottom: 1px solid rgba(11,110,105,.2); }
+.faq details { border-top: 1px solid var(--border); padding: 1rem 0; }
+.faq details:last-child { border-bottom: 1px solid var(--border); }
 .faq summary { cursor: pointer; font-weight: 600; font-size: 1.12rem; list-style-position: outside; }
-.faq summary:focus-visible { outline: 3px solid #0B6E69; outline-offset: 3px; }
+.faq summary:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
 .faq details p { margin: .75rem 0 0; max-width: 62ch; }
 .more-link { display: inline-block; margin-top: 1.5rem; font-weight: 600; }
 .trust-more { display: inline-block; margin-top: .75rem; font-size: .95rem; font-weight: 600; }
 .footer-next { margin: .25rem 0 1rem; opacity: .8; }
 .sum-text { margin: .5rem 0 .6rem; line-height: 1.45; }
-.sum-link { text-decoration: underline; text-decoration-color: rgba(11,110,105,.5); text-decoration-thickness: 2px; text-underline-offset: 2px; }
-.sum-foot { margin: .6rem 0 .75rem; padding-top: .5rem; border-top: 1px solid rgba(11,110,105,.2); font-size: .78em; line-height: 1.35; opacity: .8; }
+.sum-link { text-decoration: underline; text-decoration-color: var(--muted); text-decoration-thickness: 2px; text-underline-offset: 2px; }
+.sum-foot { margin: .6rem 0 .75rem; padding-top: .5rem; border-top: 1px solid var(--line); font-size: .78em; line-height: 1.35; opacity: .8; }
 @media (prefers-reduced-motion: no-preference) {
   .scene-sum .sum-text, .scene-sum .sum-foot { opacity: 0; transform: translateY(6px); transition: opacity .5s ease, transform .5s ease; }
   .scene-sum .sum-text.in { opacity: 1; transform: none; }
@@ -96,19 +96,19 @@
 .snip-ico { width: 36px; height: 36px; flex: none; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
 .snip-ico svg { width: 20px; height: 20px; }
 .ico-gone { background: var(--mist); color: var(--muted); }
-.ico-kept { background: rgba(11,110,105,.12); color: var(--accent); }
+.ico-kept { background: var(--sage); color: var(--accent); }
 
 /* Hero (Oct 2026): DM Sans headline, logo and summary; pen underline */
 :root { --serif: "DM Sans", "Helvetica Neue", Arial, sans-serif; }
 .hero .h1 { font-family: var(--serif); font-weight: 600; letter-spacing: -.025em; }
-.hero .h1 em { font-style: italic; color: var(--accent-dark, #08524E); }
+.hero .h1 em { font-style: italic; color: var(--accent-dark); }
 .soon { margin: 1rem 0 0; font-size: .92rem; color: var(--ink-soft); display: flex; align-items: center; gap: .5rem; }
-.soon::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent, #0B6E69); flex: none; }
+.soon::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--rec); flex: none; }
 .scene-sum .sum-title, .scene-sum .sum-text, .phone-app { font-family: var(--serif); }
 .scene-sum .sum-title, .phone-app { font-weight: 600; letter-spacing: -.01em; }
 .ink-line { position: relative; white-space: nowrap; }
-.ink-line .ink-stroke { position: absolute; left: 0; right: 0; bottom: -.45em; width: 100%; height: .55em; overflow: visible; color: var(--accent, #0B6E69); }
-.ink-line .ink-nib { position: absolute; bottom: -.3em; left: 100%; width: .62em; height: 1.1em; color: var(--accent, #0B6E69); transform: translate(-50%, 0) rotate(45deg); transform-origin: 50% 100%; }
+.ink-line .ink-stroke { position: absolute; left: 0; right: 0; bottom: -.45em; width: 100%; height: .55em; overflow: visible; color: var(--accent); }
+.ink-line .ink-nib { position: absolute; bottom: -.3em; left: 100%; width: .62em; height: 1.1em; color: var(--accent); transform: translate(-50%, 0) rotate(45deg); transform-origin: 50% 100%; }
 @media (prefers-reduced-motion: no-preference) {
   .sum-text.in .ink-stroke path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: ink-draw 1.4s ease-in-out .7s forwards; }
   .sum-text.in .ink-nib { left: 0; opacity: 0; animation: ink-travel 1.4s ease-in-out .7s forwards; }
@@ -137,12 +137,14 @@
 .cb-ps { border-top: 1px solid var(--line); padding-top: 7px; font-size: 12.5px; color: var(--ink-soft); }
 .cb-ps span { color: var(--accent); text-decoration: underline; }
 .waitlist { max-width: 640px; margin: 0 auto; text-align: left; }
+.waitlist h2 { text-wrap: balance; }
 .org-line { max-width: 640px; margin: 24px auto 0; color: var(--ink-soft); }
 .org-line a { font-weight: 600; }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<div class="first108"><a href="#waitlist">Be one of the first 108 people to use MyScribe. Launching 1 December. <span>Join now</span></a></div>
 <header class="site-header">
 <div class="wrap">
 <a class="logo" href="/"><svg class="logo-mark" viewBox="8 12 50 33" fill="none" aria-hidden="true" focusable="false"><defs><mask id="lm-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64"><rect width="64" height="64" fill="#fff"/><g transform="translate(32.5 40) rotate(-45) scale(1.75)"><path d="M2.6 0H8.4" stroke="#000" stroke-width="1.1" stroke-linecap="round"/><circle cx="9.4" cy="0" r="1.05" fill="#000"/></g></mask></defs><path class="lm-line lm-l1" pathLength="1" d="M13 23H36" stroke="currentColor" stroke-width="6.4" stroke-linecap="round"/><path class="lm-line lm-l2" pathLength="1" d="M13 40H29" stroke="currentColor" stroke-width="6.4" stroke-linecap="round"/><g class="lm-nib" mask="url(#lm-cut)"><path transform="translate(32.5 40) rotate(-45) scale(1.75)" d="M0 0L13-4.3Q17 0 13 4.3Z" fill="currentColor"/></g></svg>MyScribe</a>
@@ -162,10 +164,10 @@
 <h1 class="h1">Was it two weeks, <em>or ten days?</em></h1>
 <p class="lead">MyScribe records your appointment, with permission, and writes down what was said, so you can go back to it.</p>
 <div class="actions">
-<a class="btn btn-primary" href="#waitlist">Join the waitlist</a>
+<a class="btn btn-primary" href="#waitlist">Join the first 108</a>
 <a class="btn btn-outline" href="/how-it-works">See how it works</a>
 </div>
-<p class="soon">Coming soon to iPhone and Android</p>
+<p class="soon">Launching 1 December on iPhone and Android</p>
 <ul class="trust trust-row" aria-label="How we look after your appointment">
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>Never sold, never used to train AI</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>Audio deleted once it's written down</li>
@@ -312,6 +314,10 @@
 <summary>How much will it cost?</summary>
 <p class="soft">Pennies, not pounds. MyScribe is free to download and your first conversation is free. After that, you top up a little credit when you need it. No subscription, credit never runs out, and you'll never be asked to pay before or during a conversation. We'll share exact prices at launch.</p>
 </details>
+<details>
+<summary>What if I can't afford it?</summary>
+<p class="soft">No one should miss out on remembering their own conversation. Through our Gifted Minutes Pool, people and organisations fund minutes for those who need them, and nobody who funds them ever sees your conversations. <a href="/organisations#gifted-minutes">Find out more, or help fill the pool</a>.</p>
+</details>
 </div>
 <a class="more-link" href="/trust">How we look after your conversation</a>
 </div>
@@ -324,20 +330,21 @@
 <section class="section" id="waitlist">
 <div class="wrap">
 <div class="panel panel-tint waitlist">
-<h2>Be first to try MyScribe</h2>
-<p class="soft">Coming soon to iPhone and Android. Leave your email and we'll tell you the day it's ready.</p>
-<form class="form" name="waitlist" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
+<p class="waitlist-count">Launching 1 December</p>
+<h2>Be one of the first 108 people to use MyScribe</h2>
+<p class="soft">The first 108 people get an hour of conversations free. Leave your email and we'll send your invite before launch, on iPhone and Android.</p>
+<form class="form" name="waitlist" method="POST" action="/waitlist-thanks" data-netlify="true" netlify-honeypot="bot-field">
 <input type="hidden" name="form-name" value="waitlist">
 <p class="hidden"><label>Leave this empty <input name="bot-field"></label></p>
 <label for="email">Email address</label>
 <div class="inline-field">
 <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-<button class="btn btn-primary" type="submit">Join the waitlist</button>
+<button class="btn btn-primary" type="submit">Join the first 108</button>
 </div>
 <p class="form-note">We'll only use your email to tell you about MyScribe. <a href="/privacy">Privacy</a></p>
 </form>
 </div>
-<p class="org-line">Work in a GP practice, PCN or ICB? <a href="/organisations">See MyScribe for organisations</a></p>
+<p class="org-line">Work in a GP practice, PCN, ICB, charity or council? <a href="/organisations">See MyScribe for organisations</a>, including our <a href="/organisations#gifted-minutes">Gifted Minutes Pool</a>.</p>
 </div>
 </section>
 </main>
